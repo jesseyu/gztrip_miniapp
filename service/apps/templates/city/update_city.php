@@ -31,11 +31,45 @@
                 </div>
             </dl>
             <dl>
+                <dt>必吃美食：</dt>
+                <dd>
+                    <input type='text' name='must_food' class='required' value='<?= $data['must_food']; ?>'/>
+                    <span class='info'></span>
+                </dd>
+            </dl>
+            <dl>
+                <dt>必去景点：</dt>
+                <dd>
+                    <input type='text' name='must_view' class='required' value='<?= $data['must_view']; ?>'/>
+                    <span class='info'></span>
+                </dd>
+            </dl>
+            <dl>
                 <dt>描述：</dt>
                 <dd>
                     <div class='unit'>
                         <textarea class='editor' name='desc' rows='30' cols='50'
                                   tools='simple'><?= $data['desc']; ?></textarea>
+                    </div>
+                    <span class='info'></span>
+                </dd>
+            </dl>
+            <dl>
+                <dt>城市指南：</dt>
+                <dd>
+                    <div class='unit'>
+                        <textarea class='editor' name='guide' rows='30' cols='50'
+                                  tools='simple'><?= $data['guide']; ?></textarea>
+                    </div>
+                    <span class='info'></span>
+                </dd>
+            </dl>
+            <dl>
+                <dt>怎么玩：</dt>
+                <dd>
+                    <div class='unit'>
+                        <textarea class='editor' name='play' rows='30' cols='50'
+                                  tools='simple'><?= $data['play']; ?></textarea>
                     </div>
                     <span class='info'></span>
                 </dd>

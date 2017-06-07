@@ -52,6 +52,28 @@ class Point extends BasicController
         $this->display('point/view.php');
     }
 
+    function specialty()
+    {
+        $numPerPage = getRequest('numPerPage', 20, true);
+        $pageNum = getRequest('pageNum', 1, true);
+        $point = model('Point');
+        $params = [
+            'type' => 'specialty',
+            'order' => 'id',
+            'limit' => ($pageNum - 1) * $numPerPage . ',' . $numPerPage
+        ];
+        $total = $point->count(['where' => 1]);
+        $page = [
+            'numPerPage' => $numPerPage,
+            'pageNum' => $pageNum,
+            'total' => $total,
+        ];
+        $data = $point->getPage($params);
+        $this->assign('data', $data);
+        $this->assign('page', $page);
+        $this->display('point/specialty.php');
+    }
+
     function food()
     {
         $numPerPage = getRequest('numPerPage', 20, true);
@@ -105,7 +127,7 @@ class Point extends BasicController
             $xModel = model($type);
             $data = $point->getData();
             $old = $point->get($data['id'])->get();
-            $item = json_decode($old['obj'],1);
+            $item = json_decode($old['obj'], 1);
             $xdata = $xModel->getData($item);
             $data['obj'] = json_encode($xdata);
             if ($point->set($data['id'], $data)) {

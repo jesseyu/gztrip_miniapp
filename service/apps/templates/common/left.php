@@ -30,7 +30,9 @@
                     <li><a href="<?= URL("point/view"); ?>" target="navTab" rel="point">景点管理</a></li>
                     <li><a href="<?= URL("point/food"); ?>" target="navTab" rel="point">美食管理</a></li>
                     <li><a href="<?= URL("city/index"); ?>" target="navTab" rel="city">城市管理</a></li>
-                    <li><a href="<?= URL("homepage/updateHomepage?id=1"); ?>" target="navTab" rel="homepage">首页管理</a></li>
+                    <li><a href="<?= URL("point/specialty"); ?>" target="navTab" rel="city">特产管理</a></li>
+                    <li><a href="<?= URL("homepage/updateHomepage?id=1"); ?>" target="navTab" rel="homepage">首页管理</a>
+                    </li>
                 </ul>
             </div>
             <!--			<div class="accordionHeader">-->

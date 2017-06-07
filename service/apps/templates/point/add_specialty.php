@@ -1,15 +1,27 @@
 <link href="/assets/themes/css/core.css" rel="stylesheet" type="text/css" media="screen"/>
 <h2 class='contentTitle'><?php echo $title; ?></h2>
 <div class='pageContent'>
-    <form method='post' action='<?= URL('city/addcity'); ?>' class='pageForm required-validate'
-          enctype="multipart/form-data" onsubmit="return iframeCallback(this);">
+    <form method='post' action='<?= URL('point/addpoint'); ?>' class='pageForm required-validate' enctype="multipart/form-data" onsubmit="return iframeCallback(this);">
         <div class='pageFormContent nowrap' layoutH='97'>
-
             <dl>
-                <dt>城市名称：</dt>
+                <dt>名称：</dt>
                 <dd>
                     <input type='text' name='name' maxlength='255' class='required'/>
                     <span class='info'></span>
+                </dd>
+            </dl>
+            <dl>
+                <dt>地区:</dt>
+                <dd>
+                    <select class="combox" name="city_id">
+                        <?php foreach ($citys as $key => $name) { ?>
+                            <?php if ($data['city_id'] == $key) { ?>
+                                <option selected value="<?= $key; ?>"><?= $name; ?></option>
+                            <?php } else { ?>
+                                <option value="<?= $key; ?>"><?= $name; ?></option>
+                            <?php } ?>
+                        <?php } ?>
+                    </select>
                 </dd>
             </dl>
             <dl>
@@ -18,6 +30,12 @@
             <dl>
                 <div class="unit">
                     <ul id="upload-preview" class="upload-preview">
+                        <?php if (isset($data['imgs'])) { ?>
+                            <?php foreach ($data['imgs'] as $img) { ?>
+                                <li class="thumbnail"><img src="<?= $img ?>" data-width="0" data-height="0" width="80">
+                                </li>
+                            <?php } ?>
+                        <?php } ?>
                     </ul>
                     <div class="upload-wrap" rel="#upload-preview">
                         <input type="file" name="imgs[]" accept="image/*" multiple="multiple" style="left: 0px;">
@@ -25,50 +43,16 @@
                 </div>
             </dl>
             <dl>
-                <dt>必吃美食：</dt>
+                <dt>口味：</dt>
                 <dd>
-                    <input type='text' name='must_food' class='required'/>
+                    <input type='text' name='taste' maxlength='255' />
                     <span class='info'></span>
                 </dd>
             </dl>
             <dl>
-                <dt>必去景点：</dt>
+                <dt>哪里买：</dt>
                 <dd>
-                    <input type='text' name='must_view' class='required'/>
-                    <span class='info'></span>
-                </dd>
-            </dl>
-            <dl>
-                <dt>描述：</dt>
-                <dd>
-                    <div class='unit'>
-                        <textarea class='editor' name='desc' rows='30' cols='50' tools='simple'></textarea>
-                    </div>
-                    <span class='info'></span>
-                </dd>
-            </dl>
-            <dl>
-                <dt>城市指南：</dt>
-                <dd>
-                    <div class='unit'>
-                        <textarea class='editor' name='guide' rows='30' cols='50' tools='simple'></textarea>
-                    </div>
-                    <span class='info'></span>
-                </dd>
-            </dl>
-            <dl>
-                <dt>怎么玩：</dt>
-                <dd>
-                    <div class='unit'>
-                        <textarea class='editor' name='play' rows='30' cols='50' tools='simple'></textarea>
-                    </div>
-                    <span class='info'></span>
-                </dd>
-            </dl>
-            <dl>
-                <dt>邮编：</dt>
-                <dd>
-                    <input type='text' name='code' maxlength='10' class='required'/>
+                    <input type='text' name='where' maxlength='255'/>
                     <span class='info'></span>
                 </dd>
             </dl>
@@ -87,6 +71,7 @@
                 <li>
                     <div class='button'>
                         <div class='buttonContent'>
+                            <input type='hidden' name='type' maxlength='100' value="specialty"/>
                             <button type='button' class='close'>取消</button>
                         </div>
                     </div>

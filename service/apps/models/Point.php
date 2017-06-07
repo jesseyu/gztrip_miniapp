@@ -13,6 +13,7 @@ class Point extends Swoole\Model
     static $typeMap = [
         'view' => "景点",
         'food' => "美食",
+        'specialty' => "特产",
     ];
 
     public function attributeLabels()
