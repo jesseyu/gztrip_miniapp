@@ -27,10 +27,10 @@
             <div class="accordionContent">
                 <ul class="tree treeFolder">
                     <li><a href="<?= URL("admin/index"); ?>" target="navTab" rel="admin">管理员管理</a></li>
-<!--                    <li><a href="--><?//= URL("category/index"); ?><!--" target="navTab" rel="category">分类管理</a></li>-->
-                    <li><a href="<?= URL("point/view"); ?>" target="navTab" rel="category">景点管理</a></li>
-                    <li><a href="<?= URL("point/food"); ?>" target="navTab" rel="category">美食管理</a></li>
-                    <li><a href="<?= URL("city/index"); ?>" target="navTab" rel="category">城市管理</a></li>
+                    <li><a href="<?= URL("point/view"); ?>" target="navTab" rel="point">景点管理</a></li>
+                    <li><a href="<?= URL("point/food"); ?>" target="navTab" rel="point">美食管理</a></li>
+                    <li><a href="<?= URL("city/index"); ?>" target="navTab" rel="city">城市管理</a></li>
+                    <li><a href="<?= URL("homepage/updateHomepage?id=1"); ?>" target="navTab" rel="homepage">首页管理</a></li>
                 </ul>
             </div>
             <!--			<div class="accordionHeader">-->

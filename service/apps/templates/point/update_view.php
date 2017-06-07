@@ -43,6 +43,13 @@
                 </div>
             </dl>
             <dl>
+                <dt>子景点：</dt>
+                <dd>
+                    <input type='text' name='son_views' maxlength='255' value='<?= $data['son_views']; ?>'/>
+                    <span class='info'></span>
+                </dd>
+            </dl>
+            <dl>
                 <dt>人均费用：</dt>
                 <dd>
                     <input type='text' name='fee' maxlength='255' value='<?= $data['fee']; ?>'/>

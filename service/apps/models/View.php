@@ -14,6 +14,7 @@ class View
     public function attributeLabels()
     {
         return [
+            'son_views' => '子景点',
             'imgs' => '图片',
             'fee' => '费用',
             'traffic' => '交通',
