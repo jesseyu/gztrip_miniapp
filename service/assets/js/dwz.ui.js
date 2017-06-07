@@ -1,16 +1,6 @@
 function initEnv() {
 	$("body").append(DWZ.frag["dwzFrag"]);
 
-	if ( $.browser.msie && /6.0/.test(navigator.userAgent) ) {
-		try {
-			document.execCommand("BackgroundImageCache", false, true);
-		}catch(e){}
-	}
-	//清理浏览器内存,只对IE起效
-	if ($.browser.msie) {
-		window.setInterval("CollectGarbage();", 10000);
-	}
-
 	$(window).resize(function(){
 		initLayout();
 		$(this).trigger(DWZ.eventType.resizeGrid);
@@ -24,23 +14,29 @@ function initEnv() {
 		ajaxbg.hide();
 	});
 	
-	$("#leftside").jBar({minW:150, maxW:700});
+	if ($.fn.jBar) $("#leftside").jBar({minW:150, maxW:700});
 	
 	if ($.taskBar) $.taskBar.init();
-	navTab.init();
 	if ($.fn.switchEnv) $("#switchEnvBox").switchEnv();
 	if ($.fn.navMenu) $("#navMenu").navMenu();
 		
 	setTimeout(function(){
 		initLayout();
-		initUI();
+		if (window.navTab) navTab.init();
+
+		// 注册DWZ插件。
+		DWZ.regPlugins.push(initUI); //第三方jQuery插件注册方法：DWZ.regPlugins.push(function($p){});
+
+		// 首次初始化插件
+		$(document).initUI();
 		
 		// navTab styles
 		var jTabsPH = $("div.tabsPageHeader");
 		jTabsPH.find(".tabsLeft").hoverClass("tabsLeftHover");
 		jTabsPH.find(".tabsRight").hoverClass("tabsRightHover");
 		jTabsPH.find(".tabsMore").hoverClass("tabsMoreHover");
-	
+
+		$(document).trigger(DWZ.eventType.initEnvAfter);
 	}, 10);
 
 }
@@ -54,16 +50,14 @@ function initLayout(){
 	$("#taskbar").css({top: iContentH + $("#header").height() + 5, width:$(window).width()});
 }
 
-function initUI(_box){
-	var $p = $(_box || document);
-
-	$("div.panel", $p).jPanel();
-
+function initUI($p){
 	//tables
-	$("table.table", $p).jTable();
-	
+	if ($.fn.jTable) $("table.table", $p).jTable();
+
 	// css tables
-	$('table.list', $p).cssTable();
+	if ($.fn.cssTable) $('table.list', $p).not('.nowrap').cssTable();
+
+	if ($.fn.jPanel) $("div.panel", $p).jPanel();
 
 	//auto bind tabs
 	$("div.tabs", $p).each(function(){
@@ -74,13 +68,18 @@ function initUI(_box){
 		$this.tabs(options);
 	});
 
-	$("ul.tree", $p).jTree();
-	$('div.accordion', $p).each(function(){
-		var $this = $(this);
-		$this.accordion({fillSpace:$this.attr("fillSpace"),alwaysOpen:true,active:0});
-	});
+	if ($.fn.jTree) $("ul.tree", $p).jTree();
 
-	$(":button.checkboxCtrl, :checkbox.checkboxCtrl", $p).checkboxCtrl($p);
+	if ($.fn.jTree){
+		$('div.accordion', $p).each(function(){
+			var $this = $(this);
+			$this.accordion({fillSpace:$this.attr("fillSpace"),alwaysOpen:true,active:0});
+		});
+	}
+
+	if ($.fn.checkboxCtrl){
+		$(":button.checkboxCtrl, :checkbox.checkboxCtrl", $p).checkboxCtrl($p);
+	}
 	
 	if ($.fn.combox) $("select.combox",$p).combox();
 	
@@ -147,30 +146,32 @@ function initUI(_box){
 	$("div.tabsHeader li, div.tabsPageHeader li, div.accordionHeader, div.accordion", $p).hoverClass("hover");
 
 	//validate form
-	$("form.required-validate", $p).each(function(){
-		var $form = $(this);
-		$form.validate({
-			onsubmit: false,
-			focusInvalid: false,
-			focusCleanup: true,
-			errorElement: "span",
-			ignore:".ignore",
-			invalidHandler: function(form, validator) {
-				var errors = validator.numberOfInvalids();
-				if (errors) {
-					var message = DWZ.msg("validateFormError",[errors]);
-					alertMsg.error(message);
-				} 
-			}
+	if ($.fn.validate) {
+		$("form.required-validate", $p).each(function(){
+			var $form = $(this);
+			$form.validate({
+				onsubmit: false,
+				focusInvalid: false,
+				focusCleanup: true,
+				errorElement: "span",
+				ignore:".ignore",
+				invalidHandler: function(form, validator) {
+					var errors = validator.numberOfInvalids();
+					if (errors) {
+						var message = DWZ.msg("validateFormError",[errors]);
+						alertMsg.error(message);
+					}
+				}
+			});
+
+			$form.find('input[customvalid]').each(function(){
+				var $input = $(this);
+				$input.rules("add", {
+					customvalid: $input.attr("customvalid")
+				})
+			});
 		});
-		
-		$form.find('input[customvalid]').each(function(){
-			var $input = $(this);
-			$input.rules("add", {
-				customvalid: $input.attr("customvalid")
-			})
-		});
-	});
+	}
 
 	if ($.fn.datepicker){
 		$('input.date', $p).each(function(){
@@ -243,7 +244,14 @@ function initUI(_box){
 			var rel = $this.attr("rel");
 			if (rel) {
 				var $rel = $("#"+rel);
-				$rel.loadUrl($this.attr("href"), {}, function(){
+				var url = unescape($this.attr("href")).replaceTmById($(event.target).parents(".unitBox:first"));
+				DWZ.debug(url);
+				if (!url.isFinishedTm()) {
+					alertMsg.error($this.attr("warn") || DWZ.msg("alertSelectMsg"));
+					return false;
+				}
+
+				$rel.loadUrl(url, {}, function(){
 					$rel.find("[layoutH]").layoutH();
 				});
 			}
@@ -259,7 +267,7 @@ function initUI(_box){
 			rel:$this.attr("rel"),
 			totalCount:$this.attr("totalCount"),
 			numPerPage:$this.attr("numPerPage"),
-			pageNumShown:$this.attr("pageNumShown"),
+			pageNumShown:$this.attr("pageNumShown") || 10,
 			currentPage:$this.attr("currentPage")
 		});
 	});
@@ -277,10 +285,4 @@ function initUI(_box){
 	if ($.fn.selectedTodo) $("a[target=selectedTodo]", $p).selectedTodo();
 	if ($.fn.pagerForm) $("form[rel=pagerForm]", $p).pagerForm({parentBox:$p});
 
-	// 执行第三方jQuery插件【 第三方jQuery插件注册：DWZ.regPlugins.push(function($p){}); 】
-	$.each(DWZ.regPlugins, function(index, fn){
-		fn($p);
-	});
 }
-
-

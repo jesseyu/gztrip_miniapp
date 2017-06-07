@@ -63,7 +63,7 @@
 		<script src="/assets/js/dwz.history.js" type="text/javascript"></script>
 		<script src="/assets/js/dwz.combox.js" type="text/javascript"></script>
 		<script src="/assets/js/dwz.print.js" type="text/javascript"></script>
-
+		<script src="/assets/js/dwz.file.js" type="text/javascript"></script>
 		<!-- 可以用dwz.min.js替换前面全部dwz.*.js (注意：替换是下面dwz.regional.zh.js还需要引入)
 		<script src="bin/dwz.min.js" type="text/javascript"></script>
 		-->

@@ -2,7 +2,7 @@
 define('DEBUG', 'on');
 //必须设置此目录,PHP程序的根目录
 define('WEBPATH', __DIR__);
-define('WEBROOT', 'http://slob.com');
+define('WEBROOT', 'http://ws.com');
 
 //包含框架入口文件
 require __DIR__ . '/libs/lib_config.php';
