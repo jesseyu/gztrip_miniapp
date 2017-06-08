@@ -75,6 +75,7 @@ class Homepage extends Swoole\Model
                 $data[$key] = getRequest($key);
             }
         }
+        $data['update_time'] = time();
         //上传图片
         if (!empty($_FILES)) {
             $imgs = [];
@@ -91,11 +92,11 @@ class Homepage extends Swoole\Model
                     $imgs[] = $file_name;
                 }
             }
-            if (!empty($imgs)) {
-                $data['banner'] = implode(',', $imgs);
-            } else {
-                $data['banner'] = $old['imgs'];
-            }
+        }
+        if (!empty($imgs)) {
+            $data['banner'] = implode(',', $imgs);
+        } else {
+            $data['banner'] = $old['banner'];
         }
         return $data;
     }

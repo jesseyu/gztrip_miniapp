@@ -60,6 +60,18 @@ class Point extends Swoole\Model
         return $data;
     }
 
+    public function getByIds($ids)
+    {
+        $params = ['in' => ['id', $ids]];
+        $list = $this->gets($params);
+        foreach ($list as $one) {
+            $xModel = model($one['type']);
+            $xdata = $xModel->analyzeData($one['obj']);
+            $result[] = $xdata + $one;
+        }
+        return $result;
+    }
+
     public function getPage($param)
     {
         $list = $this->gets($param);

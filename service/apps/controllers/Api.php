@@ -13,28 +13,57 @@ use Swoole;
 
 class Api extends Swoole\Controller
 {
-    function getInterface(){
-        if(!in_array($_SERVER["REMOTE_ADDR"],$this->swoole->config["common"]["sao_service"])){
+    function returnSucceed($data)
+    {
+        $result['code'] = 200;
+        $result['data'] = $data;
+        echo json_encode($result);
+        exit;
+    }
+
+    function getInterface()
+    {
+        if (!in_array($_SERVER["REMOTE_ADDR"], $this->swoole->config["common"]["sao_service"])) {
             exit("you are not my service !");
         }
-        $interface_name=getRequest("name");
-        $interfaces= new Interfaces(\Swoole::$php,"status_center");
-        $params=array(
-            "name"=>$interface_name
+        $interface_name = getRequest("name");
+        $interfaces = new Interfaces(\Swoole::$php, "status_center");
+        $params = array(
+            "name" => $interface_name
         );
-        $interface=$interfaces->exists($params);
-        if($interface){
-            $data = $interfaces->get($interface_name,"name")->get();
+        $interface = $interfaces->exists($params);
+        if ($interface) {
+            $data = $interfaces->get($interface_name, "name")->get();
             return $data["id"];
-        }else{
-            $data=[
-                'name'=>$interface_name,
-                'create_time'=>time()
+        } else {
+            $data = [
+                'name' => $interface_name,
+                'create_time' => time()
             ];
-            $id=$interfaces->put($data);
+            $id = $interfaces->put($data);
             return $id;
         }
 
     }
 
+    function homePage()
+    {
+        $home_page = model('Homepage');
+        $data = $home_page->get(1)->get();
+        if ($data) {
+            $banners = explode(',', $data['banner']);
+            foreach ($banners as $banner) {
+                $imgs[] = WEBROOT . "/local/" . $banner;
+            }
+            $data['banner'] = $imgs;
+            //获取推荐景点
+            $mPoint = model('Point');
+            $season_view = $mPoint->getByIds($data['season_view']);
+            $data['season_view'] = $season_view;
+            //获取推荐景点
+            $recommend_view = $mPoint->getByIds($data['recommend_view']);
+            $data['recommend_view'] = $recommend_view;
+        }
+        $this->returnSucceed($data);
+    }
 }
