@@ -56,7 +56,7 @@ class Api extends Swoole\Controller
                 $imgs[] = WEBROOT . "/local/" . $banner;
             }
             $data['banner'] = $imgs;
-            //获取推荐景点
+            //获取当季景点
             $mPoint = model('Point');
             $season_view = $mPoint->getByIds($data['season_view']);
             $data['season_view'] = $season_view;
@@ -66,4 +66,18 @@ class Api extends Swoole\Controller
         }
         $this->returnSucceed($data);
     }
+
+    function getAllCity()
+    {
+        $isSimple = getRequest('isSimple', false);
+        $limit = getRequest('limit', 8);
+        $mCity = model('City');
+        if ($isSimple) {
+            $where['select'] = "id,name";
+        }
+        $where['limit'] = "0,$limit";
+        $list = $mCity->gets($where);
+        $this->returnSucceed($list);
+    }
+
 }
