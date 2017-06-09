@@ -21,6 +21,18 @@ class Api extends Swoole\Controller
         exit;
     }
 
+    function returnError($code, $msg = null)
+    {
+        $result['code'] = $code;
+        if ($msg) {
+            $result['msg'] = $msg;
+        } else {
+            $result['msg'] = \Constants::$msg_map[$code];
+        }
+        echo json_encode($result);
+        exit;
+    }
+
     function getInterface()
     {
         if (!in_array($_SERVER["REMOTE_ADDR"], $this->swoole->config["common"]["sao_service"])) {
@@ -78,6 +90,31 @@ class Api extends Swoole\Controller
         $where['limit'] = "0,$limit";
         $list = $mCity->gets($where);
         $this->returnSucceed($list);
+    }
+
+    function cityHome()
+    {
+        $id = getRequest('id');
+        if ($id) {
+            $mCity = model('City');
+            $list = $mCity->get($id)->get();
+            if ($list['imgs']) {
+                $imgs = json_decode($list['imgs'], 1);
+                foreach ($imgs as &$img) {
+                    $img = WEBROOT . "/local/" . $img;
+                }
+            }
+            //获取美食
+            $mPoint = model('Point');
+            $must_food = $mPoint->getByIds($list['must_food']);
+            $list['must_food'] = $must_food;
+            //获取必去景点
+            $must_view = $mPoint->getByIds($list['must_view']);
+            $list['must_view'] = $must_view;
+            $this->returnSucceed($list);
+        } else {
+            $this->returnError(\Constants::ERROR_PARAMS);
+        }
     }
 
 }

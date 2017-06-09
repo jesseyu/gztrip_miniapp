@@ -9,7 +9,7 @@
  Target Server Version : 50627
  File Encoding         : utf-8
 
- Date: 06/09/2017 10:02:08 AM
+ Date: 06/09/2017 16:01:58 PM
 */
 
 SET NAMES utf8;
@@ -30,6 +30,13 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
+--  Records of `admin`
+-- ----------------------------
+BEGIN;
+INSERT INTO `admin` VALUES ('13', 'test', '51abb9636078defbf888d8457a7c76f85c8f114c', '1', '1', '1'), ('14', 'xiangdong', '51abb9636078defbf888d8457a7c76f85c8f114c', null, null, null);
+COMMIT;
+
+-- ----------------------------
 --  Table structure for `category`
 -- ----------------------------
 DROP TABLE IF EXISTS `category`;
@@ -39,6 +46,13 @@ CREATE TABLE `category` (
   `ctime` int(11) DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`cate_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Records of `category`
+-- ----------------------------
+BEGIN;
+INSERT INTO `category` VALUES ('1', '川菜', '1');
+COMMIT;
 
 -- ----------------------------
 --  Table structure for `city`
@@ -58,6 +72,13 @@ CREATE TABLE `city` (
   `ctime` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Records of `city`
+-- ----------------------------
+BEGIN;
+INSERT INTO `city` VALUES ('1', '贵阳', '[\"3dbe27b4d60b8c59a964f97301929ffe1.jpg\"]', '1', '1', '7', '4,5', '', '', '0851', '1496978324'), ('2', '遵义市', '[\"d70daa2e11cdb7dca82f9e9784ee40c21.jpg\"]', '遵义', '1', '', '', '', '', '0851', '1496209761');
+COMMIT;
 
 -- ----------------------------
 --  Table structure for `comment`
@@ -104,6 +125,13 @@ CREATE TABLE `home_page` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
+--  Records of `home_page`
+-- ----------------------------
+BEGIN;
+INSERT INTO `home_page` VALUES ('1', '贵州欢迎你', 'www.baidu.com', '7decc1e6edcb0135169bc483ff9a1cc71.jpg,1e275c6c4d989ceba608879c358e03ec1.png', '4,5,6', '4,5,6', '1');
+COMMIT;
+
+-- ----------------------------
 --  Table structure for `like`
 -- ----------------------------
 DROP TABLE IF EXISTS `like`;
@@ -138,6 +166,13 @@ CREATE TABLE `point` (
   `ctime` int(11) NOT NULL COMMENT '创建时间',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Records of `point`
+-- ----------------------------
+BEGIN;
+INSERT INTO `point` VALUES ('4', '1', 'view', '大山1', '1', '{\"son_views\":\"1,2\",\"fee\":\"100\",\"traffic\":\"21\",\"video\":\"1\",\"des\":\"1\",\"score\":\"1\",\"open_time\":\"1\",\"phone\":\"1\",\"tip\":\"1\",\"imgs\":[\"http:\\/\\/ws.com\\/local\\/cbe5b038e740fc9586b4eca02dfdea431.jpg\"]}', '1495870849'), ('5', '0', 'view', '大河', '1', '{\"fee\":\"100\",\"traffic\":\"1\",\"video\":\"2\",\"des\":\"1\",\"score\":\"11\",\"open_time\":\"11\",\"phone\":\"1\",\"tip\":\"111\",\"imgs\":[\"56624b54f860be2177c2195301ef094c1.png\"]}', '1496199625'), ('6', '0', 'view', '长江', '1', '{\"fee\":\"1\",\"traffic\":\"1\",\"video\":\"1\",\"des\":\"1\",\"score\":\"1\",\"open_time\":\"1\",\"phone\":\"1\",\"tip\":\"1\",\"imgs\":[\"http:\\/\\/ws.com\\/local\\/fa2aa5d34e742169c5cb206a43f8ad931.jpg\",\"http:\\/\\/ws.com\\/local\\/827884da538aed106de035c79da340e31.png\"]}', '1496200212'), ('7', '2', 'food', '锅包肉', '1', '{\"fee\":\"1\",\"traffic\":\"1\",\"video\":\"1\",\"des\":\"1\",\"score\":\"1\",\"open_time\":\"1\",\"phone\":\"1\",\"tip\":\"1\",\"imgs\":[\"2c5750bf2c0b73964053422916ace8521.jpg\",\"4022ad733c3d752a94fcc678e4743dad1.png\"]}', '1496200653'), ('9', '1', 'specialty', '土豆片', '1', '{\"taste\":\"2\",\"where\":\"1\",\"imgs\":[\"bc55568f9ecb4802a63894ab201d2c3e1.png\"]}', '1496838907');
+COMMIT;
 
 -- ----------------------------
 --  Table structure for `user`
