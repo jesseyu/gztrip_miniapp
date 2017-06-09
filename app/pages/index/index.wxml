@@ -1,2 +1,20 @@
-<!--pages/index/index.wxml-->
-<text>pages/index/index.wxml</text>
+<view class="gz_photo">
+  <view class="classname">
+      <text>走遍大地神州,醉美多彩贵州欢迎您</text>
+      <button>tex</button>
+  </view>
+  <swiper indicator-dots="true">
+      <swiper-item>
+        <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/0df3d7ca7bcb0a46d17ba03e6963f6246b60af5f.jpg"></image>
+      </swiper-item>
+      <swiper-item>
+          <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/91529822720e0cf39d398d5f0a46f21fbf09aa4c.jpg"></image>
+      </swiper-item>
+      <swiper-item>
+        <image src="//gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/9345d688d43f8794aaf3c3d6d61b0ef41bd53a3d.jpg"></image>
+      </swiper-item>
+      <swiper-item>
+        <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/d041a4a1ef50fcd3471064be.jpg"></image>
+      </swiper-item>
+  </swiper>
+</view>

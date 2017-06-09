@@ -1,1 +1,11 @@
 /* pages/index/index.wxss */
+.gz_photo{
+  height:530rpx;
+}
+.gz_photo swiper{
+   height:530rpx;
+}
+.gz_photo swiper swiper-item image{
+  width:100%;
+  height:100%;
+}
