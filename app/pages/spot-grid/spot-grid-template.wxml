@@ -1,0 +1,6 @@
+<template name="spotGridTemplate">
+  <view class="mod_gridItem">
+    <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/0df3d7ca7bcb0a46d17ba03e6963f6246b60af5f.jpg"></image>
+    <text>黄果树瀑布</text>
+  </view>
+</template>

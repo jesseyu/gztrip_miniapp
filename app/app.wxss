@@ -1,0 +1,35 @@
+.mod_itemBox{
+  margin-top:15px;
+}
+.mod_itemBox .itemHead{
+  height:60rpx;
+  line-height:60rpx;  
+}
+.mod_itemBox .itemHead .title{
+  font-size:18px;
+  font-weight:bold;
+}
+.mod_itemBox .itemHead .more{
+  float:right;
+  font-size:12px;
+}
+.mod_itemBox .itemContainer{
+  padding:7px 0;
+}
+
+.mod_gridbox{
+  display:flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  justify-content:space-between;
+}
+.mod_gridItem image{
+  width:100px;
+  height:100px;
+}
+.mod_gridItem text{
+  display: block;
+  font-size:14px;
+  text-align:center;
+  padding:8px 0;
+}

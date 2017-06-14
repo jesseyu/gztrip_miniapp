@@ -1,6 +1,13 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/city/city",
+    "pages/index/index",
+    "pages/city/spots/spots", 
+    "pages/city/foods/foods",  
+    "pages/city/specialty/specialty",  
+    "pages/city/cityGuides/cityGuides", 
+    "pages/city/travelGuides/travelGuides",
+    "pages/place/place"
   ],
   "window": {
     "navigationBarBackgroundColor":"#1a9ffd",

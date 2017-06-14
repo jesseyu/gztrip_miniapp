@@ -1,0 +1,73 @@
+.cityHead{
+  position:relative;
+  overflow:hidden;
+}
+.cityInfo{
+  width:100%;
+  position:absolute;
+  top:0;
+  z-index:99;
+  text-align:center;
+  padding-top:90px;
+}
+.cityInfo text{
+  display: block; 
+  color:#fff;
+}
+.cityName{
+  font-size:90rpx;
+  font-weight:bold;
+  margin-bottom:6px;
+}
+.cityBestPlay{
+  font-size:16px;
+}
+.cityVideo{
+  position:absolute;
+  z-index:2;
+  background:rgba(0,0,0,0.6);
+  color:#fff;
+  font-size:13px;
+  font-weight:normal;
+  padding:6px 12px;
+  border-radius:4px;
+  right:12px;
+  top:16px;
+}
+.cityPhoto{
+  height:240px;
+}
+.cityPhoto image{
+  width: 100%;
+  height:240px;
+}
+.cityNav{
+  display:flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  height:140rpx;
+  background:#f4f4f4;
+}
+.navItem{
+  padding:14px 17px;
+  text-align:center;
+  font-size:14px;
+}
+.navItem image{
+  width:26px;
+  height:26px;
+}
+.navItem text{
+  display:block;
+  text-align:center;
+}
+.cityBest{
+  padding:0 15px;
+  margin-top:10px;
+}
+.cityBest .title{
+  display:block;
+  text-align:center;
+  padding:22px 0;
+}

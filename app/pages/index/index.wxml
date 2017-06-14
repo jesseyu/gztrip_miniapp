@@ -1,3 +1,5 @@
+<import src="../food-grid/food-grid-template.wxml"/>
+<import src="../spot-grid/spot-grid-template.wxml"/>
 <view class="homeHead">
   <view class="title">
     <text class="slogan">走遍大地神州,醉美多彩贵州欢迎您</text>
@@ -23,14 +25,14 @@
     </view>
     <view class="itemContainer">
         <view class="cityList">
-            <view class="cityItem">遵义</view>
-            <view class="cityItem">遵义</view>
-            <view class="cityItem">遵义</view>
-            <view class="cityItem">遵义</view>
-            <view class="cityItem">遵义</view>
-            <view class="cityItem">遵义</view>
-            <view class="cityItem">遵义</view>
-            <view class="cityItem">遵义</view>
+            <view class="cityItem" catchtap="onCitytap">遵义</view>
+            <view class="cityItem" catchtap="onCitytap">遵义</view>
+            <view class="cityItem" catchtap="onCitytap">遵义</view>
+            <view class="cityItem" catchtap="onCitytap">遵义</view>
+            <view class="cityItem" catchtap="onCitytap">遵义</view>
+            <view class="cityItem" catchtap="onCitytap">遵义</view>
+            <view class="cityItem" catchtap="onCitytap">遵义</view>
+            <view class="cityItem" catchtap="onCitytap">遵义</view>
         </view>
     </view>
   </view>
@@ -39,31 +41,10 @@
       <text class="title">当季推荐景点</text>
     </view>
     <view class="itemContainer">
-        <view class="indexItem">
-            <view class="mod_prList">
-                <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/0df3d7ca7bcb0a46d17ba03e6963f6246b60af5f.jpg"></image>
-                <text>黄果树瀑布</text>
-            </view>
-            <view class="mod_prList">
-                <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/0df3d7ca7bcb0a46d17ba03e6963f6246b60af5f.jpg"></image>
-                <text>黄果树瀑布</text>
-            </view>
-            <view class="mod_prList">
-                <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/0df3d7ca7bcb0a46d17ba03e6963f6246b60af5f.jpg"></image>
-                <text>黄果树瀑布</text>
-            </view>
-            <view class="mod_prList">
-                <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/0df3d7ca7bcb0a46d17ba03e6963f6246b60af5f.jpg"></image>
-                <text>黄果树瀑布</text>
-            </view>
-            <view class="mod_prList">
-                <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/0df3d7ca7bcb0a46d17ba03e6963f6246b60af5f.jpg"></image>
-                <text>黄果树瀑布</text>
-            </view>
-            <view class="mod_prList">
-                <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/0df3d7ca7bcb0a46d17ba03e6963f6246b60af5f.jpg"></image>
-                <text>黄果树瀑布</text>
-            </view>
+        <view class="mod_gridbox">
+            <template is="spotGridTemplate"></template>
+            <template is="spotGridTemplate"></template>
+            <template is="spotGridTemplate"></template>
         </view>
     </view>
   </view>
@@ -72,31 +53,10 @@
       <text class="title">来贵州必玩地</text>
     </view>
     <view class="itemContainer">
-        <view class="indexItem">
-            <view class="mod_prList">
-                <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/0df3d7ca7bcb0a46d17ba03e6963f6246b60af5f.jpg"></image>
-                <text>黄果树瀑布</text>
-            </view>
-            <view class="mod_prList">
-                <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/0df3d7ca7bcb0a46d17ba03e6963f6246b60af5f.jpg"></image>
-                <text>黄果树瀑布</text>
-            </view>
-            <view class="mod_prList">
-                <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/0df3d7ca7bcb0a46d17ba03e6963f6246b60af5f.jpg"></image>
-                <text>黄果树瀑布</text>
-            </view>
-            <view class="mod_prList">
-                <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/0df3d7ca7bcb0a46d17ba03e6963f6246b60af5f.jpg"></image>
-                <text>黄果树瀑布</text>
-            </view>
-            <view class="mod_prList">
-                <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/0df3d7ca7bcb0a46d17ba03e6963f6246b60af5f.jpg"></image>
-                <text>黄果树瀑布</text>
-            </view>
-            <view class="mod_prList">
-                <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/0df3d7ca7bcb0a46d17ba03e6963f6246b60af5f.jpg"></image>
-                <text>黄果树瀑布</text>
-            </view>
+        <view class="mod_gridbox">
+            <template is="spotGridTemplate"></template>
+            <template is="spotGridTemplate"></template>
+            <template is="spotGridTemplate"></template>
         </view>
     </view>
   </view>
@@ -105,31 +65,10 @@
       <text class="title">贵州最地道小吃</text>
     </view>
     <view class="itemContainer">
-         <view class="indexItem">
-            <view class="mod_prList">
-                <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/0df3d7ca7bcb0a46d17ba03e6963f6246b60af5f.jpg"></image>
-                <text>黄果树瀑布</text>
-            </view>
-            <view class="mod_prList">
-                <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/0df3d7ca7bcb0a46d17ba03e6963f6246b60af5f.jpg"></image>
-                <text>黄果树瀑布</text>
-            </view>
-            <view class="mod_prList">
-                <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/0df3d7ca7bcb0a46d17ba03e6963f6246b60af5f.jpg"></image>
-                <text>黄果树瀑布</text>
-            </view>
-            <view class="mod_prList">
-                <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/0df3d7ca7bcb0a46d17ba03e6963f6246b60af5f.jpg"></image>
-                <text>黄果树瀑布</text>
-            </view>
-            <view class="mod_prList">
-                <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/0df3d7ca7bcb0a46d17ba03e6963f6246b60af5f.jpg"></image>
-                <text>黄果树瀑布</text>
-            </view>
-            <view class="mod_prList">
-                <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/0df3d7ca7bcb0a46d17ba03e6963f6246b60af5f.jpg"></image>
-                <text>黄果树瀑布</text>
-            </view>
+        <view class="mod_gridbox">
+            <template is="foodGridTemplate"></template>
+            <template is="foodGridTemplate"></template>
+            <template is="foodGridTemplate"></template>
         </view>
     </view>
   </view>

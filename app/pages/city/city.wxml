@@ -1,0 +1,60 @@
+<import src="../food-grid/food-grid-template.wxml" />
+<import src="../spot-grid/spot-grid-template.wxml" />
+<view class="cityHead">
+  <view class="cityInfo">
+    <text class="cityName">贵阳市</text>
+    <text class="cityBestPlay">最佳旅游季：3月 - 10月</text>
+  </view>
+  <view class="cityVideo">短视详解</view>
+  <swiper class="cityPhoto" indicator-dots="true">
+    <swiper-item>
+      <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/91529822720e0cf39d398d5f0a46f21fbf09aa4c.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/9345d688d43f8794aaf3c3d6d61b0ef41bd53a3d.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/d041a4a1ef50fcd3471064be.jpg"></image>
+    </swiper-item>
+  </swiper>
+  <view class="cityNav">
+    <view class="navItem" catchtap="onSpotsTap">
+      <image src="../../images/menuicon.png"></image>
+      <text>景点</text>
+    </view>
+    <view class="navItem" catchtap="onFoodsTap">
+      <image src="../../images/menuicon.png"></image>
+      <text>美食</text>
+    </view>
+    <view class="navItem" catchtap="onSpecialtyTap">
+      <image src="../../images/menuicon.png"></image>
+      <text>特产</text>
+    </view>
+    <view class="navItem" catchtap="onCityGuidesTap">
+      <image src="../../images/menuicon.png"></image>
+      <text>城市指南</text>
+    </view>
+    <view class="navItem" catchtap="onTravelGuidesTap" >
+      <image src="../../images/menuicon.png"></image>
+      <text>怎么玩</text>
+    </view>
+  </view>
+</view>
+<view class="cityContainer">
+  <view class="cityBest">
+    <text class="title">到这座城市一定要去的地方</text>
+    <view class="mod_gridbox">
+      <template is="spotGridTemplate"></template>
+      <template is="spotGridTemplate"></template>
+      <template is="spotGridTemplate"></template>
+    </view>
+  </view>
+  <view class="cityBest">
+    <text class="title">到这座城市你一定要吃</text>
+    <view class="mod_gridbox">
+      <template is="foodGridTemplate"></template>
+      <template is="foodGridTemplate"></template>
+      <template is="foodGridTemplate"></template>
+    </view>
+  </view>
+</view>

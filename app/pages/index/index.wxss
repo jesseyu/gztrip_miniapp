@@ -41,24 +41,6 @@
 .homeBody{
   padding:10px 15px;
 }
-.mod_itemBox{
-  margin-top:15px;
-}
-.mod_itemBox .itemHead{
-  height:60rpx;
-  line-height:60rpx;  
-}
-.mod_itemBox .itemHead .title{
-  font-size:18px;
-  font-weight:bold;
-}
-.mod_itemBox .itemHead .more{
-  float:right;
-  font-size:12px;
-}
-.mod_itemBox .itemContainer{
-  padding:7px 0;
-}
 .cityList{
   display:flex;
   flex-direction: row;
@@ -73,21 +55,11 @@
   border:1px solid #ddd;
   margin:4px 0;
 }
-.indexItem{
+.gridbox{
   display:flex;
   flex-direction: row;
   flex-wrap:wrap;
   justify-content:space-between;
-}
-.mod_prList image{
-  width:100px;
-  height:100px;
-}
-.mod_prList text{
-  display: block;
-  font-size:14px;
-  text-align:center;
-  padding:8px 0;
 }
 .minapp_footer{
   font-size:14px;
