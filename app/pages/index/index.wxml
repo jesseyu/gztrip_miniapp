@@ -1,20 +1,140 @@
-<view class="gz_photo">
-  <view class="classname">
-      <text>走遍大地神州,醉美多彩贵州欢迎您</text>
-      <button>tex</button>
+<view class="homeHead">
+  <view class="title">
+    <text class="slogan">走遍大地神州,醉美多彩贵州欢迎您</text>
+    <text class="playVideo">短视频了解</text>
   </view>
-  <swiper indicator-dots="true">
-      <swiper-item>
-        <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/0df3d7ca7bcb0a46d17ba03e6963f6246b60af5f.jpg"></image>
-      </swiper-item>
-      <swiper-item>
-          <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/91529822720e0cf39d398d5f0a46f21fbf09aa4c.jpg"></image>
-      </swiper-item>
-      <swiper-item>
-        <image src="//gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/9345d688d43f8794aaf3c3d6d61b0ef41bd53a3d.jpg"></image>
-      </swiper-item>
-      <swiper-item>
-        <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/d041a4a1ef50fcd3471064be.jpg"></image>
-      </swiper-item>
+  <swiper class="bgPhoto" indicator-dots="true">
+    <swiper-item>
+      <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/91529822720e0cf39d398d5f0a46f21fbf09aa4c.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/9345d688d43f8794aaf3c3d6d61b0ef41bd53a3d.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/d041a4a1ef50fcd3471064be.jpg"></image>
+    </swiper-item>
   </swiper>
+</view>
+<view class="homeBody">
+  <view class="mod_itemBox">
+    <view class="itemHead">
+      <text class="title">所有城市</text>
+      <text class="more">更多》</text>
+    </view>
+    <view class="itemContainer">
+        <view class="cityList">
+            <view class="cityItem">遵义</view>
+            <view class="cityItem">遵义</view>
+            <view class="cityItem">遵义</view>
+            <view class="cityItem">遵义</view>
+            <view class="cityItem">遵义</view>
+            <view class="cityItem">遵义</view>
+            <view class="cityItem">遵义</view>
+            <view class="cityItem">遵义</view>
+        </view>
+    </view>
+  </view>
+  <view class="mod_itemBox">
+    <view class="itemHead">
+      <text class="title">当季推荐景点</text>
+    </view>
+    <view class="itemContainer">
+        <view class="indexItem">
+            <view class="mod_prList">
+                <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/0df3d7ca7bcb0a46d17ba03e6963f6246b60af5f.jpg"></image>
+                <text>黄果树瀑布</text>
+            </view>
+            <view class="mod_prList">
+                <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/0df3d7ca7bcb0a46d17ba03e6963f6246b60af5f.jpg"></image>
+                <text>黄果树瀑布</text>
+            </view>
+            <view class="mod_prList">
+                <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/0df3d7ca7bcb0a46d17ba03e6963f6246b60af5f.jpg"></image>
+                <text>黄果树瀑布</text>
+            </view>
+            <view class="mod_prList">
+                <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/0df3d7ca7bcb0a46d17ba03e6963f6246b60af5f.jpg"></image>
+                <text>黄果树瀑布</text>
+            </view>
+            <view class="mod_prList">
+                <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/0df3d7ca7bcb0a46d17ba03e6963f6246b60af5f.jpg"></image>
+                <text>黄果树瀑布</text>
+            </view>
+            <view class="mod_prList">
+                <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/0df3d7ca7bcb0a46d17ba03e6963f6246b60af5f.jpg"></image>
+                <text>黄果树瀑布</text>
+            </view>
+        </view>
+    </view>
+  </view>
+  <view class="mod_itemBox">
+    <view class="itemHead">
+      <text class="title">来贵州必玩地</text>
+    </view>
+    <view class="itemContainer">
+        <view class="indexItem">
+            <view class="mod_prList">
+                <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/0df3d7ca7bcb0a46d17ba03e6963f6246b60af5f.jpg"></image>
+                <text>黄果树瀑布</text>
+            </view>
+            <view class="mod_prList">
+                <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/0df3d7ca7bcb0a46d17ba03e6963f6246b60af5f.jpg"></image>
+                <text>黄果树瀑布</text>
+            </view>
+            <view class="mod_prList">
+                <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/0df3d7ca7bcb0a46d17ba03e6963f6246b60af5f.jpg"></image>
+                <text>黄果树瀑布</text>
+            </view>
+            <view class="mod_prList">
+                <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/0df3d7ca7bcb0a46d17ba03e6963f6246b60af5f.jpg"></image>
+                <text>黄果树瀑布</text>
+            </view>
+            <view class="mod_prList">
+                <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/0df3d7ca7bcb0a46d17ba03e6963f6246b60af5f.jpg"></image>
+                <text>黄果树瀑布</text>
+            </view>
+            <view class="mod_prList">
+                <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/0df3d7ca7bcb0a46d17ba03e6963f6246b60af5f.jpg"></image>
+                <text>黄果树瀑布</text>
+            </view>
+        </view>
+    </view>
+  </view>
+  <view class="mod_itemBox">
+    <view class="itemHead">
+      <text class="title">贵州最地道小吃</text>
+    </view>
+    <view class="itemContainer">
+         <view class="indexItem">
+            <view class="mod_prList">
+                <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/0df3d7ca7bcb0a46d17ba03e6963f6246b60af5f.jpg"></image>
+                <text>黄果树瀑布</text>
+            </view>
+            <view class="mod_prList">
+                <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/0df3d7ca7bcb0a46d17ba03e6963f6246b60af5f.jpg"></image>
+                <text>黄果树瀑布</text>
+            </view>
+            <view class="mod_prList">
+                <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/0df3d7ca7bcb0a46d17ba03e6963f6246b60af5f.jpg"></image>
+                <text>黄果树瀑布</text>
+            </view>
+            <view class="mod_prList">
+                <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/0df3d7ca7bcb0a46d17ba03e6963f6246b60af5f.jpg"></image>
+                <text>黄果树瀑布</text>
+            </view>
+            <view class="mod_prList">
+                <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/0df3d7ca7bcb0a46d17ba03e6963f6246b60af5f.jpg"></image>
+                <text>黄果树瀑布</text>
+            </view>
+            <view class="mod_prList">
+                <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/0df3d7ca7bcb0a46d17ba03e6963f6246b60af5f.jpg"></image>
+                <text>黄果树瀑布</text>
+            </view>
+        </view>
+    </view>
+  </view>
+</view>
+<view class="minapp_footer">
+    <text>© 2017 贵州旅行小程序 版权所有</text>
+    <text>了解开发团队</text>
 </view>
