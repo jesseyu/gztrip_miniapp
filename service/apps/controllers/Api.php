@@ -103,6 +103,7 @@ class Api extends Swoole\Controller
                 foreach ($imgs as &$img) {
                     $img = WEBROOT . "/local/" . $img;
                 }
+                $list['imgs'] = $imgs;
             }
             //获取美食
             $mPoint = model('Point');
