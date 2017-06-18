@@ -1,0 +1,14 @@
+<import src="../../spot-grid/spot-grid-template.wxml" />
+<view class="moreScenic">
+  <view class="mod_gridbox">
+    <template is="spotGridTemplate"></template>
+    <template is="spotGridTemplate"></template>
+    <template is="spotGridTemplate"></template>
+    <template is="spotGridTemplate"></template>
+    <template is="spotGridTemplate"></template>
+    <template is="spotGridTemplate"></template>
+    <template is="spotGridTemplate"></template>
+    <template is="spotGridTemplate"></template>
+    <template is="spotGridTemplate"></template>
+  </view>
+</view>

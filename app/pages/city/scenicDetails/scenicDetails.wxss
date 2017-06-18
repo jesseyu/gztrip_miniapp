@@ -1,0 +1,93 @@
+page{
+  background:#eee;
+}
+.scenicHead{
+  width:100%;
+  position:relative;
+}
+.scenicHead .scenicPhoto{
+  width:100%;
+  height:400rpx;
+}
+.scenicHead .scenicPhoto image{
+  width:100%;
+  height:400rpx;
+}
+.scenicTitle,
+.scenicPhotoNum,
+.sceniclikeBtn{
+  position:absolute;
+  z-index:99;
+  color:#fff;
+}
+.scenicTitle{
+  bottom:50rpx;
+  left:30rpx;
+  font-size:68rpx;
+  font-weight:bold;
+}
+.scenicPhotoNum{
+  right:20px;
+  bottom:15px;
+  display:block;
+  padding:0 12px;
+  background: rgba(0,0,0,0.6);
+  font-size:14px;
+  line-height:25px;
+  height:23px;
+  border-radius:5px;
+}
+.sceniclikeBtn{
+  top:20px;
+  right:20px;
+}
+.scenicBox{
+  margin:19px 0;
+  background:#fff;
+}
+.scenicBoxHead{
+  height:78rpx;
+  line-height:80rpx;
+  overflow:hidden;
+  padding:0 20rpx;
+}
+.scenicBoxTitle{
+  float:left;
+  font-weight:bold;
+  font-size:16px;
+}
+.scenicMore{
+  font-size:14px;
+  float:right;
+  color:#a3a3a3;
+}
+.scenicBoxCont{
+  line-height:26px;
+  text-align:left;
+  font-size:14px;
+  padding:3px 10px 15px 10px;
+}
+.scenicMap{
+  height:50px;
+  line-height:52px;
+  text-align:center;
+  background:#7bdbff;
+  color: #fff;
+}
+.scenicBoxItem{
+  border-bottom:1px solid #f2f2f2;
+  min-height:40px;
+  display:flex;
+  flex-direction: row;
+}
+.scenicBoxItem .title{
+  width:20%;
+  font-weight:bold;
+  line-height:40px;
+  font-size:15px;
+}
+.scenicBoxItem .text{
+  width: 80%;
+  padding:10px 0 8px 0;
+  line-height:22px;
+}

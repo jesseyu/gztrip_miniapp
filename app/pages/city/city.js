@@ -6,29 +6,10 @@ Page({
   onLoad: function (options) {
   
   },
-  onSpotsTap:function(event){
+  oncdTap:function(event){
+      var typeIndex = event.currentTarget.dataset.current;
       wx.navigateTo({
-        url: './spots/spots',
+        url: './details/details?typeIndex=' + typeIndex
       })
   },
-  onFoodsTap:function(event){
-    wx.navigateTo({
-      url: './foods/foods',
-    })
-  },
-  onSpecialtyTap:function(event){
-    wx.navigateTo({
-      url: './specialty/specialty',
-    })
-  },
-  onTravelGuidesTap:function(event){
-    wx.navigateTo({
-      url: './travelGuides/travelGuides',
-    })
-  },
-  onCityGuidesTap:function(event){
-    wx.navigateTo({
-      url: './cityGuides/cityGuides',
-    })
-  }
 })

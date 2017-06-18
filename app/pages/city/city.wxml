@@ -18,25 +18,25 @@
     </swiper-item>
   </swiper>
   <view class="cityNav">
-    <view class="navItem" catchtap="onSpotsTap">
+    <view class="navItem" catchtap="oncdTap" data-current="0">
       <image src="../../images/menuicon.png"></image>
       <text>景点</text>
     </view>
-    <view class="navItem" catchtap="onFoodsTap">
+    <view class="navItem" catchtap="oncdTap" data-current="1">
       <image src="../../images/menuicon.png"></image>
       <text>美食</text>
     </view>
-    <view class="navItem" catchtap="onSpecialtyTap">
+    <view class="navItem" catchtap="oncdTap" data-current="2">
       <image src="../../images/menuicon.png"></image>
       <text>特产</text>
     </view>
-    <view class="navItem" catchtap="onCityGuidesTap">
+    <view class="navItem" catchtap="oncdTap" data-current="3">
       <image src="../../images/menuicon.png"></image>
-      <text>城市指南</text>
+      <text>指南</text>
     </view>
-    <view class="navItem" catchtap="onTravelGuidesTap" >
+    <view class="navItem" catchtap="oncdTap" data-current="4">
       <image src="../../images/menuicon.png"></image>
-      <text>怎么玩</text>
+      <text>攻略</text>
     </view>
   </view>
 </view>

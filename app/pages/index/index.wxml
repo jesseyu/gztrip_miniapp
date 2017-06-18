@@ -1,9 +1,13 @@
 <import src="../food-grid/food-grid-template.wxml"/>
 <import src="../spot-grid/spot-grid-template.wxml"/>
+<view class="videoLayer {{playStatus == true ? 'on':'false'}}">
+关于视频
+<text class="closeLayer" catchtap="closeVideoLayer">关闭窗口</text>
+</view>
 <view class="homeHead">
   <view class="title">
     <text class="slogan">走遍大地神州,醉美多彩贵州欢迎您</text>
-    <text class="playVideo">短视频了解</text>
+    <text class="playVideo" catchtap="playAboutGzVideo">短视频了解</text>
   </view>
   <swiper class="bgPhoto" indicator-dots="true">
     <swiper-item>
@@ -21,14 +25,14 @@
   <view class="mod_itemBox">
     <view class="itemHead">
       <text class="title">所有城市</text>
-      <text class="more">更多》</text>
+      <text class="more" catchtap="onMorePlacetap">更多》</text>
     </view>
     <view class="itemContainer">
         <view class="cityList">
+            <view class="cityItem" catchtap="onCitytap">贵阳</view>
             <view class="cityItem" catchtap="onCitytap">遵义</view>
-            <view class="cityItem" catchtap="onCitytap">遵义</view>
-            <view class="cityItem" catchtap="onCitytap">遵义</view>
-            <view class="cityItem" catchtap="onCitytap">遵义</view>
+            <view class="cityItem" catchtap="onCitytap">凯里</view>
+            <view class="cityItem" catchtap="onCitytap">西江</view>
             <view class="cityItem" catchtap="onCitytap">遵义</view>
             <view class="cityItem" catchtap="onCitytap">遵义</view>
             <view class="cityItem" catchtap="onCitytap">遵义</view>
@@ -75,5 +79,5 @@
 </view>
 <view class="minapp_footer">
     <text>© 2017 贵州旅行小程序 版权所有</text>
-    <text>了解开发团队</text>
+    <text catchtap="onAboutTeamTap">了解开发团队</text>
 </view>

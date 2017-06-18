@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    playStatus:false
   },
 
   /**
@@ -19,5 +19,28 @@ Page({
     wx.navigateTo({
       url: '../city/city',
     })
+  },
+  onMorePlacetap:function(event){
+    wx.navigateTo({
+      url: '../place/place',
+    })
+  },
+  onAboutTeamTap:function(event){
+    wx.navigateTo({
+      url: '../aboutTeam/aboutTeam',
+    })
+  },
+  playAboutGzVideo:function(evnet){
+    // this.data.playStatus = true;
+    this.setData({
+      playStatus:true
+    })
+  },
+  closeVideoLayer:function(evnet){
+    if(this.data.playStatus == true){
+      this.setData({
+        playStatus: false
+      })
+    }
   }
 })

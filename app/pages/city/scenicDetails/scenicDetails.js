@@ -1,4 +1,4 @@
-// pages/place/place.js
+// pages/city/scenicDetails/scenicDetails.js
 Page({
 
   /**
@@ -14,9 +14,9 @@ Page({
   onLoad: function (options) {
   
   },
-  onCitytap:function(event){
+  onScenicMoreTap:function(e){
     wx.navigateTo({
-      url: '../city/city',
+      url: '../moreScenic/moreScenic',
     })
   }
 })

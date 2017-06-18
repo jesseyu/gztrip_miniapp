@@ -1,0 +1,84 @@
+<view class="foodHead">
+  <text class="foodTitle">遵义羊肉粉</text>
+  <text class="foodPhotoNum">102张</text>
+  <text class="foodlikeBtn">想吃</text>
+  <swiper class="foodPhoto" indicator-dots="true">
+    <swiper-item>
+      <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/91529822720e0cf39d398d5f0a46f21fbf09aa4c.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/9345d688d43f8794aaf3c3d6d61b0ef41bd53a3d.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/d041a4a1ef50fcd3471064be.jpg"></image>
+    </swiper-item>
+  </swiper>
+</view>
+<view class="foodbody">
+  <view class="foodbox">
+    <view class="foodBoxHead">
+      <text class="foodBoxTitle">美食简介</text>
+    </view>
+    <view class="foodBoxCont">初的酸汤是用酿酒后的尾酒调制的，后改用热米汤自然发酵或者用食材本身的酸味来调制。而用酸汤烹制鱼肴，是贵州人最爱，很久以前就逐渐形成了。苗族有句民谣：“最白最白的，要数冬天雪。最甜最甜的，要数白糖甘蔗。最香最美的，要数酸汤鱼。”
+    </view>
+  </view>
+  <view class="foodbox">
+    <view class="foodBoxHead">
+      <text class="foodBoxTitle">当地这几家最正宗</text>
+    </view>
+    <view class="foodBoxCont">
+        <view class="foodShops">
+            <view class="foodShop_img">
+              <image src="https://ss0.baidu.com/73F1bjeh1BF3odCf/it/u=712958028,1945827562&fm=85&s=9E04854F18727B969FA194780300D019"></image>
+            </view>
+            <view class="foodShop_info">
+                <view class="fsinfo_list">
+                  <text class="shopName">遵义高家羊肉粉</text>
+                </view>
+                <view class="fsinfo_list">
+                  <text class="title">电话</text>
+                  <text class="text">0851-23232323</text>
+                </view>
+                <view class="fsinfo_list">
+                  <text class="title">地址</text>
+                  <text class="text">贵州省贵阳市云岩区白云大道224号</text>
+                </view>
+                <view class="fsinfo_list">
+                  <text class="title">人均消费</text>
+                  <text class="text">贵50元/人</text>
+                </view>
+                <view class="fsinfo_list">
+                  <text class="title">营业时间</text>
+                  <text class="text">6:00 - 12:00</text>
+                </view>
+            </view>
+        </view>
+        <view class="foodShops">
+            <view class="foodShop_img">
+              <image src="https://ss0.baidu.com/73F1bjeh1BF3odCf/it/u=712958028,1945827562&fm=85&s=9E04854F18727B969FA194780300D019"></image>
+            </view>
+            <view class="foodShop_info">
+                <view class="fsinfo_list">
+                  <text class="shopName">遵义高家羊肉粉</text>
+                </view>
+                <view class="fsinfo_list">
+                  <text class="title">电话</text>
+                  <text class="text">0851-23232323</text>
+                </view>
+                <view class="fsinfo_list">
+                  <text class="title">地址</text>
+                  <text class="text">贵州省贵阳市云岩区白云大道224号</text>
+                </view>
+                <view class="fsinfo_list">
+                  <text class="title">人均消费</text>
+                  <text class="text">贵50元/人</text>
+                </view>
+                <view class="fsinfo_list">
+                  <text class="title">营业时间</text>
+                  <text class="text">6:00 - 12:00</text>
+                </view>
+            </view>
+        </view>
+    </view>
+  </view>
+</view>

@@ -1,13 +1,13 @@
 {
   "pages": [
-    "pages/city/city",
     "pages/index/index",
-    "pages/city/spots/spots", 
-    "pages/city/foods/foods",  
-    "pages/city/specialty/specialty",  
-    "pages/city/cityGuides/cityGuides", 
-    "pages/city/travelGuides/travelGuides",
-    "pages/place/place"
+    "pages/city/city", 
+    "pages/city/details/details", 
+    "pages/city/scenicDetails/scenicDetails",
+    "pages/city/moreScenic/moreScenic",
+    "pages/city/foodDetails/foodDetails",
+    "pages/place/place",
+    "pages/aboutTeam/aboutTeam"
   ],
   "window": {
     "navigationBarBackgroundColor":"#1a9ffd",

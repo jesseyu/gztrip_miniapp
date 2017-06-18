@@ -1,4 +1,4 @@
-// pages/city/travelGuides/travelGuides.js
+// pages/aboutTeam/aboutTeam.js
 Page({
 
   /**

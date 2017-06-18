@@ -1,0 +1,100 @@
+page{
+  background:#eee;
+}
+.foodHead{
+  width:100%;
+  position:relative;
+}
+.foodHead .foodPhoto{
+  width:100%;
+  height:400rpx;
+}
+.foodHead .foodPhoto image{
+  width:100%;
+  height:400rpx;
+}
+.foodTitle,
+.foodPhotoNum,
+.foodlikeBtn{
+  position:absolute;
+  z-index:99;
+  color:#fff;
+}
+.foodTitle{
+  bottom:50rpx;
+  left:30rpx;
+  font-size:68rpx;
+  font-weight:bold;
+}
+.foodPhotoNum{
+  right:20px;
+  bottom:15px;
+  display:block;
+  padding:0 12px;
+  background: rgba(0,0,0,0.6);
+  font-size:14px;
+  line-height:25px;
+  height:23px;
+  border-radius:5px;
+}
+.foodlikeBtn{
+  top:20px;
+  right:20px;
+}
+.foodbox{
+  margin:19px 0;
+  background:#fff;
+}
+.foodBoxHead{
+  height:78rpx;
+  line-height:80rpx;
+  overflow:hidden;
+  padding:0 20rpx;
+}
+.foodBoxTitle{
+  float:left;
+  font-weight:bold;
+  font-size:16px;
+}
+.foodBoxCont{
+  line-height:26px;
+  text-align:left;
+  font-size:14px;
+  padding:3px 10px 15px 10px;
+}
+.foodShops{
+  display:flex;
+  flex-direction:row;
+  margin-bottom:30px;
+}
+.foodShops .foodShop_img{
+  width:25%;
+}
+.foodShops .foodShop_img image{
+  width:80px;
+  height:80px;
+}
+.foodShops .foodShop_info{
+  width:70%;
+}
+.fsinfo_list{
+  border-bottom:1px solid #f2f2f2;
+  min-height:30px;
+  display:flex;
+  flex-direction: row;
+}
+.fsinfo_list .shopName{
+  font-size:18px;
+  font-weight:bold;
+}
+.fsinfo_list .title{
+  width:30%;
+  font-weight:bold;
+  line-height:40px;
+  font-size:14px;
+}
+.fsinfo_list .text{
+  width: 70%;
+  padding:10px 0 8px 0;
+  line-height:22px;
+}

@@ -1,2 +1,30 @@
-<!--pages/place/place.wxml-->
-<text>pages/place/place.wxml</text>
+<view class="placeContainer">
+  <view class="placeList" catchtap="onCitytap">
+    <view class="placeInfo">
+      <text class="placeListTitle">贵阳市</text>
+      <text class="placeBestPlay">最佳旅游季: 3 月- 10月</text>
+    </view>
+    <image class="placeBg" src="http://gss0.bdstatic.com/8fo3dSag_xI4khGko9WTAnF6hhy/baidu/pic/item/ac345982b2b7d0a2f3ce56ccc1ef76094b369a58.jpg"></image>
+  </view>
+  <view class="placeList" catchtap="onCitytap">
+    <view class="placeInfo">
+      <text class="placeListTitle">遵义市</text>
+      <text class="placeBestPlay">最佳旅游季: 3 月- 10月</text>
+    </view>
+    <image class="placeBg" src="http://gss0.baidu.com/-Po3dSag_xI4khGko9WTAnF6hhy/baidu/pic/item/ae51f3deb48f8c548f159e7530292df5e1fe7fa1.jpg"></image>
+  </view>
+  <view class="placeList" catchtap="onCitytap">
+    <view class="placeInfo">
+      <text class="placeListTitle">凯里市</text>
+      <text class="placeBestPlay">最佳旅游季: 3 月- 10月</text>
+    </view>
+    <image class="placeBg" src="http://gss0.baidu.com/9fo3dSag_xI4khGko9WTAnF6hhy/baidu/pic/item/55e736d12f2eb938fe245b9ddf628535e5dd6f17.jpg"></image>
+  </view>
+  <view class="placeList" catchtap="onCitytap">
+    <view class="placeInfo">
+      <text class="placeListTitle">大方县</text>
+      <text class="placeBestPlay">最佳旅游季: 3 月- 10月</text>
+    </view>
+    <image class="placeBg" src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/91529822720e0cf39d398d5f0a46f21fbf09aa4c.jpg"></image>
+  </view>
+</view>

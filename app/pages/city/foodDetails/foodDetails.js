@@ -1,4 +1,4 @@
-// pages/city/spots/spots.js
+// pages/city/foodDetails/foodDetails.js
 Page({
 
   /**

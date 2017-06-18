@@ -1,0 +1,6 @@
+.moreScenic{
+  padding:15px;
+}
+.moreScenic .mod_gridItem{
+  margin-bottom:15px;
+}

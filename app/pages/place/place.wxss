@@ -1,1 +1,31 @@
-/* pages/place/place.wxss */
+.placeList{
+  position:relative;
+  width:100%;
+  text-align:center;
+  margin-top:-3px;
+}
+.placeList .placeBg{
+  width:100%;
+  height:180px;
+}
+.placeInfo{
+  position:absolute;
+  left:50%;
+  top:33%;
+  z-index:9;
+  color:#fff;
+  width:400rpx;
+  margin-left:-200rpx;
+  overflow:hidden;
+}
+.placeInfo text{
+  display:block;
+}
+.placeInfo .placeListTitle{
+  font-size:80rpx;
+  font-weight:bold;
+  margin-bottom:10px;
+}
+.placeInfo .placeBestPlay{
+  font-size:14px;
+}

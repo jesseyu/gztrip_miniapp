@@ -1,0 +1,103 @@
+<view class="cdNav">
+  <view class="cdNav-list {{currentTab==0 ? 'active' : ''}}" data-current="0" bindtap="swichNav">景点</view>
+  <view class="cdNav-list {{currentTab==1 ? 'active' : ''}}" data-current="1" bindtap="swichNav">美食</view>
+  <view class="cdNav-list {{currentTab==2 ? 'active' : ''}}" data-current="2" bindtap="swichNav">特产</view>
+  <view class="cdNav-list {{currentTab==3 ? 'active' : ''}}" data-current="3" bindtap="swichNav">指南</view>
+  <view class="cdNav-list {{currentTab==4 ? 'active' : ''}}" data-current="4" bindtap="swichNav">攻略</view>
+</view>
+<view class="cdtabBox">
+  <view class="cdtabItem spots" wx:if="{{currentTab == 0}}">
+    <view class="cdContent">
+      <view class="cd_list" catchtap="onScenicTap">
+        <view class="cdInfo">
+          <text class="cdName">黄果树6</text>
+          <text class="cdPeople">300人想去</text>
+        </view>
+        <image class="cdBg" src="https://dimg04.c-ctrip.com/images/300f0b0000005l9hgC1FA_C_500_280.jpg"></image>
+      </view>
+      <view class="cd_list" catchtap="onScenicTap">
+        <view class="cdInfo">
+          <text class="cdName">索罗</text>
+          <text class="cdPeople">300人想去</text>
+        </view>
+        <image class="cdBg" src="https://dimg04.c-ctrip.com/images/30060f0000007bb449A3F_C_460_346.jpg"></image>
+      </view>
+      <view class="cd_list" catchtap="onScenicTap">
+        <view class="cdInfo">
+          <text class="cdName">阿萨德</text>
+          <text class="cdPeople">300人想去</text>
+        </view>
+        <image class="cdBg" src="https://dimg04.c-ctrip.com/images/300h0d0000006s2398D77_C_460_346.jpg"></image>
+      </view>
+    </view>
+  </view>
+  <view class="cdtabItem foods" wx:if="{{currentTab == 1}}">
+    <view class="cdContent">
+      <view class="cd_list" catchtap="onfoodTap">
+        <view class="cdInfo">
+          <text class="cdName">丝娃娃</text>
+          <text class="cdPeople">300人想吃</text>
+        </view>
+        <image class="cdBg" src="https://dimg04.c-ctrip.com/images/30060f0000007bb449A3F_C_460_346.jpg"></image>
+      </view>
+      <view class="cd_list" catchtap="onfoodTap">
+        <view class="cdInfo">
+          <text class="cdName">羊肉粉</text>
+          <text class="cdPeople">300人想吃</text>
+        </view>
+        <image class="cdBg" src="https://dimg04.c-ctrip.com/images/300f0b0000005l9hgC1FA_C_500_280.jpg"></image>
+      </view>
+      <view class="cd_list" catchtap="onfoodTap">
+        <view class="cdInfo">
+          <text class="cdName">是的</text>
+          <text class="cdPeople">300人想吃</text>
+        </view>
+        <image class="cdBg" src="https://dimg04.c-ctrip.com/images/300h0d0000006s2398D77_C_460_346.jpg"></image>
+      </view>
+    </view>
+  </view>
+  <view class="cdtabItem specialty" wx:if="{{currentTab == 2}}">
+    <view class="cdContent">
+      <view class="cd_list">
+        <view class="cdInfo">
+          <text class="cdName">丝娃娃</text>
+        </view>
+        <view class="cdInfo-tag">
+          <text>口味：偏辣</text>
+          <text>在哪里买: 超市</text>
+        </view>
+        <image class="cdBg" src="https://dimg04.c-ctrip.com/images/30060f0000007bb449A3F_C_460_346.jpg"></image>
+      </view>
+      <view class="cd_list">
+        <view class="cdInfo">
+          <text class="cdName">羊肉粉</text>
+        </view>
+        <view class="cdInfo-tag">
+          <text>口味：偏辣</text>
+          <text>在哪里买: 超市</text>
+        </view>
+        <image class="cdBg" src="https://dimg04.c-ctrip.com/images/300f0b0000005l9hgC1FA_C_500_280.jpg"></image>
+      </view>
+      <view class="cd_list">
+        <view class="cdInfo">
+          <text class="cdName">是的</text>
+        </view>
+        <view class="cdInfo-tag">
+          <text>口味：偏辣</text>
+          <text>在哪里买: 超市</text>
+        </view>
+        <image class="cdBg" src="https://dimg04.c-ctrip.com/images/300h0d0000006s2398D77_C_460_346.jpg"></image>
+      </view>
+    </view>
+  </view>
+  <view class="cdtabItem guide" wx:if="{{currentTab == 3}}">
+    <view class="cdContent">
+      <text>“旅”是旅行，外出，即为了实现某一目的而在空间上从甲地到乙地的行进过程；“游”是外出游览、观光、娱乐，即为达到这些目的所作的旅行。二者合起来即旅游。所以，旅行偏重于行，旅游不但有“行”，且有观光、娱乐含义。</text>
+    </view>
+  </view>
+  <view class="cdtabItem strategy" wx:if="{{currentTab == 4}}">
+    <view class="cdContent">
+      <text>1.旅行游览。南朝 梁 沈约《悲哉行》：“旅游媚年春，年春媚游人。”唐王勃《涧底寒松赋》：“岁八月壬子旅游於蜀，寻茅溪之涧。” 宋无名氏《异闻总录》卷一：“临川画工黄生，旅游如广昌，至秩巴寨，卒长郎巖馆之。” 明吴承恩《著》：“东园公初晋七袠，言开曼龄，是日高宴……会有京华旅游淮海浪士，闻之欢喜。”《人民文学》1981年第3期：“旅游事业突起后，就有人在半山寺开设茶水站。”</text>
+    </view>
+  </view>
+</view>
