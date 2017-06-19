@@ -9,7 +9,7 @@ Page({
   },
   onLoad: function (options) {
     var homeUrl = app.globalData.g_gzTripBase + "/homePage";
-    var allCityUrl = app.globalData.g_gzTripBase + "/getAllCity";
+    var allCityUrl = app.globalData.g_gzTripBase + "/getAllCity?isSimple=1&limit=8";
     util.http(homeUrl, this.processIndexData); //获取主页数据
     util.http(allCityUrl,this.processGetAllCityData) //获取所有城市
   },
