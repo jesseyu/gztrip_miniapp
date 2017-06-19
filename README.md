@@ -11,3 +11,13 @@
 * api/cityHome
 * 参数:
     * id 城市id
+4. 城市下景点
+* api/getAllView
+* 参数:
+    * city_id 城市id
+    * pos 最后一个元素id
+5. 城市下特产
+* api/getAllSpecialty
+* 参数:
+    * city_id 城市id
+    * pos 最后一个元素id
