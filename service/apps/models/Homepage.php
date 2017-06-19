@@ -19,6 +19,7 @@ class Homepage extends Swoole\Model
             'banner' => 'bannner 图片',
             'season_view' => '当季景点',
             'recommend_view' => '推荐景点',
+            'recommend_food' => '推荐美食',
             'update_time' => '更新时间',
         ];
     }

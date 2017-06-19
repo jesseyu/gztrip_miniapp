@@ -1,6 +1,7 @@
 <h2 class='contentTitle'><?php echo $title; ?></h2>
 <div class='pageContent'>
-    <form method='post' action='<?= URL('Homepage/updateHomepage'); ?>' class='pageForm required-validate' enctype="multipart/form-data" onsubmit="return iframeCallback(this);">
+    <form method='post' action='<?= URL('Homepage/updateHomepage'); ?>' class='pageForm required-validate'
+          enctype="multipart/form-data" onsubmit="return iframeCallback(this);">
         <div class='pageFormContent nowrap' layoutH='97'>
             <input type='hidden' name='id' value='<?= $data['id']; ?>'/>
             <dl>
@@ -46,6 +47,13 @@
                 <dt>推荐景点：</dt>
                 <dd>
                     <input type='text' name='recommend_view' maxlength='255' value='<?= $data['recommend_view']; ?>'/>
+                    <span class='info'></span>
+                </dd>
+            </dl>
+            <dl>
+                <dt>推荐美食：</dt>
+                <dd>
+                    <input type='text' name='recommend_food' maxlength='255' value='<?= $data['recommend_food']; ?>'/>
                     <span class='info'></span>
                 </dd>
             </dl>
