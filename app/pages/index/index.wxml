@@ -1,24 +1,20 @@
-<import src="../food-grid/food-grid-template.wxml"/>
-<import src="../spot-grid/spot-grid-template.wxml"/>
+<import src="../food-grid/food-grid-template.wxml" />
+<import src="../spot-grid/spot-grid-template.wxml" />
 <view class="videoLayer {{playStatus == true ? 'on':'false'}}">
-关于视频
-<text class="closeLayer" catchtap="closeVideoLayer">关闭窗口</text>
+  关于视频
+  <text class="closeLayer" catchtap="closeVideoLayer">关闭窗口</text>
 </view>
 <view class="homeHead">
   <view class="title">
-    <text class="slogan">走遍大地神州,醉美多彩贵州欢迎您</text>
+    <text class="slogan">{{homeData.slogan}}</text>
     <text class="playVideo" catchtap="playAboutGzVideo">短视频了解</text>
   </view>
   <swiper class="bgPhoto" indicator-dots="true">
-    <swiper-item>
-      <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/91529822720e0cf39d398d5f0a46f21fbf09aa4c.jpg"></image>
-    </swiper-item>
-    <swiper-item>
-      <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/9345d688d43f8794aaf3c3d6d61b0ef41bd53a3d.jpg"></image>
-    </swiper-item>
-    <swiper-item>
-      <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/d041a4a1ef50fcd3471064be.jpg"></image>
-    </swiper-item>
+    <block wx:for="{{homeData.banner}}">
+      <swiper-item>
+        <image src="{{item}}"></image>
+      </swiper-item>
+    </block>
   </swiper>
 </view>
 <view class="homeBody">
@@ -28,16 +24,11 @@
       <text class="more" catchtap="onMorePlacetap">更多》</text>
     </view>
     <view class="itemContainer">
-        <view class="cityList">
-            <view class="cityItem" catchtap="onCitytap">贵阳</view>
-            <view class="cityItem" catchtap="onCitytap">遵义</view>
-            <view class="cityItem" catchtap="onCitytap">凯里</view>
-            <view class="cityItem" catchtap="onCitytap">西江</view>
-            <view class="cityItem" catchtap="onCitytap">遵义</view>
-            <view class="cityItem" catchtap="onCitytap">遵义</view>
-            <view class="cityItem" catchtap="onCitytap">遵义</view>
-            <view class="cityItem" catchtap="onCitytap">遵义</view>
-        </view>
+      <view class="cityList">
+        <block wx:for="{{allCity}}">
+          <view class="cityItem" catchtap="onCitytap" data-id="{{item.id}}">{{item.name}}</view>
+        </block>
+      </view>
     </view>
   </view>
   <view class="mod_itemBox">
@@ -45,11 +36,11 @@
       <text class="title">当季推荐景点</text>
     </view>
     <view class="itemContainer">
-        <view class="mod_gridbox">
-            <template is="spotGridTemplate"></template>
-            <template is="spotGridTemplate"></template>
-            <template is="spotGridTemplate"></template>
-        </view>
+      <view class="mod_gridbox">
+        <template is="spotGridTemplate"></template>
+        <template is="spotGridTemplate"></template>
+        <template is="spotGridTemplate"></template>
+      </view>
     </view>
   </view>
   <view class="mod_itemBox">
@@ -57,11 +48,11 @@
       <text class="title">来贵州必玩地</text>
     </view>
     <view class="itemContainer">
-        <view class="mod_gridbox">
-            <template is="spotGridTemplate"></template>
-            <template is="spotGridTemplate"></template>
-            <template is="spotGridTemplate"></template>
-        </view>
+      <view class="mod_gridbox">
+        <template is="spotGridTemplate"></template>
+        <template is="spotGridTemplate"></template>
+        <template is="spotGridTemplate"></template>
+      </view>
     </view>
   </view>
   <view class="mod_itemBox">
@@ -69,15 +60,15 @@
       <text class="title">贵州最地道小吃</text>
     </view>
     <view class="itemContainer">
-        <view class="mod_gridbox">
-            <template is="foodGridTemplate"></template>
-            <template is="foodGridTemplate"></template>
-            <template is="foodGridTemplate"></template>
-        </view>
+      <view class="mod_gridbox">
+        <template is="foodGridTemplate"></template>
+        <template is="foodGridTemplate"></template>
+        <template is="foodGridTemplate"></template>
+      </view>
     </view>
   </view>
 </view>
 <view class="minapp_footer">
-    <text>© 2017 贵州旅行小程序 版权所有</text>
-    <text catchtap="onAboutTeamTap">了解开发团队</text>
+  <text>© 2017 贵州旅行小程序 版权所有</text>
+  <text catchtap="onAboutTeamTap">了解开发团队</text>
 </view>
