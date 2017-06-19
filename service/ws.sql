@@ -9,7 +9,7 @@
  Target Server Version : 50627
  File Encoding         : utf-8
 
- Date: 06/09/2017 16:01:58 PM
+ Date: 06/19/2017 18:55:33 PM
 */
 
 SET NAMES utf8;
@@ -120,6 +120,7 @@ CREATE TABLE `home_page` (
   `banner` text NOT NULL COMMENT 'bannner 图片',
   `season_view` text NOT NULL COMMENT '当季景点',
   `recommend_view` text NOT NULL COMMENT '推荐景点',
+  `recommend_food` text NOT NULL COMMENT '推荐食物',
   `update_time` int(11) NOT NULL COMMENT '更新时间',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
@@ -128,7 +129,7 @@ CREATE TABLE `home_page` (
 --  Records of `home_page`
 -- ----------------------------
 BEGIN;
-INSERT INTO `home_page` VALUES ('1', '贵州欢迎你', 'www.baidu.com', '7decc1e6edcb0135169bc483ff9a1cc71.jpg,1e275c6c4d989ceba608879c358e03ec1.png', '4,5,6', '4,5,6', '1');
+INSERT INTO `home_page` VALUES ('1', '贵州欢迎你', 'www.baidu.com', '7decc1e6edcb0135169bc483ff9a1cc71.jpg,1e275c6c4d989ceba608879c358e03ec1.png', '4,5,6', '4,5,6', '7', '1497869689');
 COMMIT;
 
 -- ----------------------------
