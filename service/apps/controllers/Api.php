@@ -75,6 +75,9 @@ class Api extends Swoole\Controller
             //获取推荐景点
             $recommend_view = $mPoint->getByIds($data['recommend_view']);
             $data['recommend_view'] = $recommend_view;
+            //获取推荐食物
+            $recommend_food = $mPoint->getByIds($data['recommend_food']);
+            $data['recommend_food'] = $recommend_food;
         }
         $this->returnSucceed($data);
     }

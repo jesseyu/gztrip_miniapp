@@ -20,6 +20,8 @@ class City extends Swoole\Model
             'code' => '邮编',
             'must_view' => '必去景点',
             'must_food' => '必吃美食',
+            'guide' => '必吃美食',
+            'play' => '必吃美食',
             'ctime' => '创建时间',
         ];
     }
