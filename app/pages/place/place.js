@@ -1,18 +1,19 @@
-// pages/place/place.js
+var util = require("../../utils/util.js");
+var app = getApp();
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-  
+    cityList:{}
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
-  
+    var allCityUrl = app.globalData.g_gzTripBase + "/getAllCity";
+    util.http(allCityUrl,this.processAllCityData);
+  },
+  processAllCityData:function(data){
+    console.log(data);
+    this.setData({
+      cityList:data.data
+    })
   },
   onCitytap:function(event){
     wx.navigateTo({

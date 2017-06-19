@@ -1,18 +1,27 @@
-// pages/index/index.js
+var util = require("../../utils/util.js");
+var app = getApp();
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-    playStatus:false
+    playStatus:false,
+    homeData:{},
+    allCity:{}
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
-  
+    var homeUrl = app.globalData.g_gzTripBase + "/homePage";
+    var allCityUrl = app.globalData.g_gzTripBase + "/getAllCity";
+    util.http(homeUrl, this.processIndexData); //获取主页数据
+    util.http(allCityUrl,this.processGetAllCityData) //获取所有城市
+  },
+  processIndexData:function(data){
+      this.setData({
+        homeData: data.data
+      })
+  },
+  processGetAllCityData:function(data){
+    this.setData({
+      allCity:data.data
+    })
   },
   onCitytap:function(event){
     console.log("123");
