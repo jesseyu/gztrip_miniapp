@@ -2,20 +2,16 @@
 <import src="../spot-grid/spot-grid-template.wxml" />
 <view class="cityHead">
   <view class="cityInfo">
-    <text class="cityName">贵阳市</text>
+    <text class="cityName">{{cityInfo.name}}</text>
     <text class="cityBestPlay">最佳旅游季：3月 - 10月</text>
   </view>
   <view class="cityVideo">短视详解</view>
   <swiper class="cityPhoto" indicator-dots="true">
-    <swiper-item>
-      <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/91529822720e0cf39d398d5f0a46f21fbf09aa4c.jpg"></image>
-    </swiper-item>
-    <swiper-item>
-      <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/9345d688d43f8794aaf3c3d6d61b0ef41bd53a3d.jpg"></image>
-    </swiper-item>
-    <swiper-item>
-      <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/d041a4a1ef50fcd3471064be.jpg"></image>
-    </swiper-item>
+    <block wx:for="{{cityInfo.imgs}}">
+      <swiper-item>
+        <image src="{{item}}"></image>
+      </swiper-item>
+    </block>
   </swiper>
   <view class="cityNav">
     <view class="navItem" catchtap="oncdTap" data-current="0">
@@ -44,17 +40,21 @@
   <view class="cityBest">
     <text class="title">到这座城市一定要去的地方</text>
     <view class="mod_gridbox">
-      <template is="spotGridTemplate"></template>
-      <template is="spotGridTemplate"></template>
-      <template is="spotGridTemplate"></template>
+      <block wx:for="{{cityInfo.must_view}}" wx:for-item="item">
+        <view class="mod_gridItem" catchtap="onScenicTap" data-postid="{{item.id}}">
+          <template is="spotGridTemplate" data="{{...item}}"></template>
+        </view>
+      </block>
     </view>
   </view>
   <view class="cityBest">
     <text class="title">到这座城市你一定要吃</text>
     <view class="mod_gridbox">
-      <template is="foodGridTemplate"></template>
-      <template is="foodGridTemplate"></template>
-      <template is="foodGridTemplate"></template>
+      <block wx:for="{{cityInfo.must_food}}" wx:for-item="item">
+        <view class="mod_gridItem" catchtap="onFoodTap" data-postid="{{item.id}}">
+          <template is="foodGridTemplate" data="{{...item}}"></template>
+        </view>
+      </block>
     </view>
   </view>
 </view>
