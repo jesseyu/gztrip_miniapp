@@ -22,6 +22,6 @@
     * city_id 城市id
     * pos 最后一个元素id
 6. 景点,美食详情接口
-* api/getAllSpecialty
+* api/getPointDetail
 * 参数:
     * id
