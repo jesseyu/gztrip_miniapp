@@ -164,4 +164,15 @@ class Api extends Swoole\Controller
         }
         $this->returnSucceed($result);
     }
+
+    function getPointDetail()
+    {
+        $id = getRequest('id');
+        $pointModel = model('Point');
+        $result = [];
+        if ($id) {
+            $result = $pointModel->getById($id);
+        }
+        $this->returnSucceed($result);
+    }
 }
