@@ -1,6 +1,4 @@
 <template name="foodGridTemplate">
-  <view class="mod_gridItem">
-    <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/9345d688d43f8794aaf3c3d6d61b0ef41bd53a3d.jpg"></image>
-    <text>美食美食</text>
-  </view>
+    <image src="{{imgs[0]}}"></image>
+    <text>{{name}}</text>
 </template>

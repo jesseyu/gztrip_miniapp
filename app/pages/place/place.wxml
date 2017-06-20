@@ -5,7 +5,8 @@
         <text class="placeListTitle">{{item.name}}</text>
         <text class="placeBestPlay">最佳旅游季: 3 月- 10月</text>
       </view>
-      <image class="placeBg" src="{{item.imgs}}"></image>
+      <image class="placeBg" src=""></image>
     </view>
   </block>
 </view>
+

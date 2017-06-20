@@ -10,14 +10,15 @@ Page({
     util.http(allCityUrl,this.processAllCityData);
   },
   processAllCityData:function(data){
-    console.log(data);
+    console.log(data.data);
     this.setData({
       cityList:data.data
     })
   },
   onCitytap:function(event){
+    var postid = event.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '../city/city',
+      url: '../city/city?id=' + postid
     })
   }
 })
