@@ -175,4 +175,28 @@ class Api extends Swoole\Controller
         }
         $this->returnSucceed($result);
     }
+
+    function getPointPic()
+    {
+        $id = getRequest('id');
+        $pointModel = model('Point');
+        $result = [];
+        if ($id) {
+            $result = $pointModel->getById($id);
+        }
+        $this->returnSucceed($result['imgs']);
+    }
+
+    function getCityHtml()
+    {
+        $id = getRequest('id');
+        $type = getRequest('type');
+        if ($id) {
+            $mCity = model('City');
+            $list = $mCity->get($id)->get();
+            $this->returnSucceed($list[$type]);
+        } else {
+            $this->returnError(\Constants::ERROR_PARAMS);
+        }
+    }
 }

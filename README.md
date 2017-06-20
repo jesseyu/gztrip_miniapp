@@ -25,3 +25,12 @@
 * api/getPointDetail
 * 参数:
     * id
+7. 景点下图片
+* api/getPointPic
+* 参数:
+    * id
+8. 景点下图片
+* api/getCityHtml
+* 参数:
+    * id
+    * type 参数 guide/play
