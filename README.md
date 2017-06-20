@@ -34,3 +34,7 @@
 * 参数:
     * id
     * type 参数 guide/play
+9. 城市下图片
+* api/getCityPic
+* 参数:
+    * id

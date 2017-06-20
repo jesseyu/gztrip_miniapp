@@ -199,4 +199,23 @@ class Api extends Swoole\Controller
             $this->returnError(\Constants::ERROR_PARAMS);
         }
     }
+
+    function getCityPic()
+    {
+        $id = getRequest('id');
+        if ($id) {
+            $mCity = model('City');
+            $list = $mCity->get($id)->get();
+            if ($list['imgs']) {
+                $imgs = json_decode($list['imgs'], 1);
+                foreach ($imgs as &$img) {
+                    $img = WEBROOT . "/local/" . $img;
+                }
+                $list['imgs'] = $imgs;
+            }
+            $this->returnSucceed($list['imgs']);
+        } else {
+            $this->returnError(\Constants::ERROR_PARAMS);
+        }
+    }
 }
