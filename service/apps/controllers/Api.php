@@ -92,6 +92,15 @@ class Api extends Swoole\Controller
         }
         $where['limit'] = "0,$limit";
         $list = $mCity->gets($where);
+        foreach ($list as &$item) {
+            if ($item['imgs']) {
+                $imgs = json_decode($item['imgs'], 1);
+                foreach ($imgs as &$img) {
+                    $img = WEBROOT . "/local/" . $img;
+                }
+                $item['imgs'] = $imgs;
+            }
+        }
         $this->returnSucceed($list);
     }
 
