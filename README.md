@@ -38,3 +38,8 @@
 * api/getCityPic
 * 参数:
     * id
+10. 城市下美食
+* api/getAllFood
+* 参数:
+    * city_id 城市id
+    * pos 最后一个元素id
