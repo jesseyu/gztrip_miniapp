@@ -5,11 +5,11 @@ Page({
     cityInfo:{}
   },
   onLoad: function (options) {
+    this.data.cityid = options.id;
     var homeUrl = app.globalData.g_gzTripBase + "/cityHome?id=" + options.id;
-    util.http(homeUrl, this.processCityData)
+    util.http(homeUrl, this.processCityData);
   },
   processCityData:function(data){
-    console.log(data);
     this.setData({
       cityInfo: data.data
     })
@@ -17,7 +17,7 @@ Page({
   oncdTap:function(event){
       var typeIndex = event.currentTarget.dataset.current;
       wx.navigateTo({
-        url: './details/details?typeIndex=' + typeIndex
+        url: './details/details?typeIndex=' + typeIndex + "&cityid=" + this.data.cityid
       })
   },
 })

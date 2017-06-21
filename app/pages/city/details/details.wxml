@@ -8,27 +8,15 @@
 <view class="cdtabBox">
   <view class="cdtabItem spots" wx:if="{{currentTab == 0}}">
     <view class="cdContent">
-      <view class="cd_list" catchtap="onScenicTap">
-        <view class="cdInfo">
-          <text class="cdName">黄果树6</text>
-          <text class="cdPeople">300人想去</text>
+      <block wx:for="{{viewList}}">
+        <view class="cd_list" catchtap="onScenicTap">
+          <view class="cdInfo">
+            <text class="cdName">{{item.name}}</text>
+            <text class="cdPeople">最佳游玩季节：</text>
+          </view>
+          <image class="cdBg" src="{{item.imgs[0]}}"></image>
         </view>
-        <image class="cdBg" src="https://dimg04.c-ctrip.com/images/300f0b0000005l9hgC1FA_C_500_280.jpg"></image>
-      </view>
-      <view class="cd_list" catchtap="onScenicTap">
-        <view class="cdInfo">
-          <text class="cdName">索罗</text>
-          <text class="cdPeople">300人想去</text>
-        </view>
-        <image class="cdBg" src="https://dimg04.c-ctrip.com/images/30060f0000007bb449A3F_C_460_346.jpg"></image>
-      </view>
-      <view class="cd_list" catchtap="onScenicTap">
-        <view class="cdInfo">
-          <text class="cdName">阿萨德</text>
-          <text class="cdPeople">300人想去</text>
-        </view>
-        <image class="cdBg" src="https://dimg04.c-ctrip.com/images/300h0d0000006s2398D77_C_460_346.jpg"></image>
-      </view>
+      </block>
     </view>
   </view>
   <view class="cdtabItem foods" wx:if="{{currentTab == 1}}">
