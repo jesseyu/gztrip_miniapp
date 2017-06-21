@@ -14,8 +14,6 @@ Page({
     util.http(allCityUrl,this.processGetAllCityData) //获取所有城市
   },
   processIndexData:function(data){
-      console.log(data);
-      console.log(data.data.season_view);
       this.setData({
         homeData: data.data
       })

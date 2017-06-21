@@ -6,6 +6,8 @@
   text-align: center;
   line-height: 80rpx;
   background:#fff;
+  height:84rpx;
+  overflow:hidden;
 }
 .cdNav-list {
   font-size: 30rpx;
