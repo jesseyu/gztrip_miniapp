@@ -51,5 +51,10 @@ Page({
         playStatus: false
       })
     }
+  },
+  onScenicTap:function(event){
+    wx.navigateTo({
+      url: '/pages/city/scenicDetails/scenicDetails?cityId=' + event.currentTarget.dataset.postid
+    })
   }
 })

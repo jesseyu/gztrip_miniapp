@@ -1,27 +1,25 @@
-<import src="../../spot-grid/spot-grid-template.wxml" />
+<import src="../../../spot-grid/spot-grid-template.wxml" />
+<import src="../../../plugin/wxParse/wxParse.wxml" />
 <view class="scenicHead">
-  <text class="scenicTitle">黄果树瀑布</text>
-  <text class="scenicPhotoNum">102张</text>
-  <text class="sceniclikeBtn">想去</text>
+  <text class="scenicTitle">{{scenicDetail.name}}</text>
+  <text class="scenicPhotoNum">{{scenicDetail.imgs.length}}张</text>
+  <!--<text class="sceniclikeBtn">想去</text>-->
   <swiper class="scenicPhoto" indicator-dots="true">
-    <swiper-item>
-      <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/91529822720e0cf39d398d5f0a46f21fbf09aa4c.jpg"></image>
-    </swiper-item>
-    <swiper-item>
-      <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/9345d688d43f8794aaf3c3d6d61b0ef41bd53a3d.jpg"></image>
-    </swiper-item>  
-    <swiper-item>
-      <image src="http://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/lvpics/pic/item/d041a4a1ef50fcd3471064be.jpg"></image>
-    </swiper-item>
+    <block wx:for="{{scenicDetail.imgs}}">
+      <swiper-item>
+        <image src="{{item}}"></image>
+      </swiper-item>
+    </block>
   </swiper>
 </view>
 <view class="scenicBody">
   <view class="scenicBox">
     <view class="scenicBoxHead">
-      <text class="scenicBoxTitle">景点攻略</text>
+      <text class="scenicBoxTitle">景点简介</text>
       <text class="scenicMore">视频了解</text>
     </view>
-    <view class="scenicBoxCont">镇远自汉高祖五年（公元前202年）设县开始，已有2200多年的历史，是云贵高原上历史最悠久的名城。由于镇远地处湘黔驿道与沅江水路的交汇处，自古以来便是水陆交通的要冲，由湖广经贵州到达云南乃至缅甸、老挝、泰国、印度等国的古驿道就通过这里。镇远的母亲河——舞阳河蜿蜒穿城而过，一汪碧水绿得叫人陶醉。相比阳朔、丽江、凤凰名气极大的古城来说，镇远古城要安静多了，做生意的多为本地人，这里的夜生活也不很丰富，在天黑没多久后，街上就逐渐恢复了宁静，游客也多会选择在阳台上静静地欣赏夜景。
+    <view class="scenicBoxCont">
+        <template is="wxParse" data="{{wxParseData:desContet.nodes}}" />
     </view>
   </view>
   <view class="scenicBox">
@@ -44,15 +42,15 @@
       </view>
       <view class="scenicBoxItem">
         <text class="title">地址</text>
-        <text class="text">贵州省雷山县西江镇西江千户苗寨</text>
+        <text class="text">{{scenicDetail.phone}}</text>
       </view>
       <view class="scenicBoxItem">
         <text class="title">门票</text>
-        <text class="text">水上游船大船80元/人，小船60元/人</text>
+        <text class="text">{{scenicDetail.fee}}</text>
       </view>
       <view class="scenicBoxItem">
         <text class="title">电话</text>
-        <text class="text">0851-23233</text>
+        <text class="text">{{scenicDetail.phone}}</text>
       </view>
       <view class="scenicBoxItem">
         <text class="title">Tips贴士</text>

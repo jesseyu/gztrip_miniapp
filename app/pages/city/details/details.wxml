@@ -1,5 +1,4 @@
 <import src="../../../plugin/wxParse/wxParse.wxml" />
-
 <view class="cdNav">
   <view class="cdNav-list {{currentTab==0 ? 'active' : ''}}" data-current="0" bindtap="swichNav">景点</view>
   <view class="cdNav-list {{currentTab==1 ? 'active' : ''}}" data-current="1" bindtap="swichNav">美食</view>
@@ -11,7 +10,7 @@
   <view class="cdtabItem spots" wx:if="{{currentTab == 0}}">
     <view class="cdContent">
       <block wx:for="{{viewList}}">
-        <view class="cd_list" catchtap="onScenicTap">
+        <view class="cd_list" catchtap="onScenicTap" data-cityId="{{item.id}}">
           <view class="cdInfo">
             <text class="cdName">{{item.name}}</text>
             <text class="cdPeople">最佳游玩季节：</text>

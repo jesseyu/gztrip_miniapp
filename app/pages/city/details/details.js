@@ -45,6 +45,7 @@ Page({
     }
   },
   processCityView: function (data) {
+    console.log(data);
     this.setData({
       viewList: data.data
     })
@@ -70,8 +71,9 @@ Page({
     WxParse.wxParse('playArticle', 'html', playArticle, that, 5); 
   },
   onScenicTap: function (e) {
+    var cityid = e.currentTarget.dataset.cityid;
     wx.navigateTo({
-      url: '../scenicDetails/scenicDetails'
+      url: '../scenicDetails/scenicDetails?cityId=' + cityid
     })
   },
   onfoodTap: function (e) {
