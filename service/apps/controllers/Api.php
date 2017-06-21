@@ -92,6 +92,15 @@ class Api extends Swoole\Controller
         }
         $where['limit'] = "0,$limit";
         $list = $mCity->gets($where);
+        foreach ($list as &$item) {
+            if ($item['imgs']) {
+                $imgs = json_decode($item['imgs'], 1);
+                foreach ($imgs as &$img) {
+                    $img = WEBROOT . "/local/" . $img;
+                }
+                $item['imgs'] = $imgs;
+            }
+        }
         $this->returnSucceed($list);
     }
 
@@ -165,6 +174,28 @@ class Api extends Swoole\Controller
         $this->returnSucceed($result);
     }
 
+    function getAllFood()
+    {
+        $city_id = getRequest('city_id');
+        $pos = getRequest('pos');
+        $pointModel = model('Point');
+        $params['limit'] = 10;
+        $params['where'] = [
+            'city_id=' . $city_id,
+            'type="food"'
+        ];
+        if ($pos) {
+            $params['where'][] = 'id < ' . $pos;
+        }
+        $list = $pointModel->gets($params);
+        $ids = array_column($list, 'id');
+        $result = [];
+        if ($ids) {
+            $result = $pointModel->getByIds(implode(',', $ids));
+        }
+        $this->returnSucceed($result);
+    }
+
     function getPointDetail()
     {
         $id = getRequest('id');
@@ -174,5 +205,48 @@ class Api extends Swoole\Controller
             $result = $pointModel->getById($id);
         }
         $this->returnSucceed($result);
+    }
+
+    function getPointPic()
+    {
+        $id = getRequest('id');
+        $pointModel = model('Point');
+        $result = [];
+        if ($id) {
+            $result = $pointModel->getById($id);
+        }
+        $this->returnSucceed($result['imgs']);
+    }
+
+    function getCityHtml()
+    {
+        $id = getRequest('id');
+        $type = getRequest('type');
+        if ($id) {
+            $mCity = model('City');
+            $list = $mCity->get($id)->get();
+            $this->returnSucceed($list[$type]);
+        } else {
+            $this->returnError(\Constants::ERROR_PARAMS);
+        }
+    }
+
+    function getCityPic()
+    {
+        $id = getRequest('id');
+        if ($id) {
+            $mCity = model('City');
+            $list = $mCity->get($id)->get();
+            if ($list['imgs']) {
+                $imgs = json_decode($list['imgs'], 1);
+                foreach ($imgs as &$img) {
+                    $img = WEBROOT . "/local/" . $img;
+                }
+                $list['imgs'] = $imgs;
+            }
+            $this->returnSucceed($list['imgs']);
+        } else {
+            $this->returnError(\Constants::ERROR_PARAMS);
+        }
     }
 }
