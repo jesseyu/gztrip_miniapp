@@ -174,6 +174,28 @@ class Api extends Swoole\Controller
         $this->returnSucceed($result);
     }
 
+    function getAllFood()
+    {
+        $city_id = getRequest('city_id');
+        $pos = getRequest('pos');
+        $pointModel = model('Point');
+        $params['limit'] = 10;
+        $params['where'] = [
+            'city_id=' . $city_id,
+            'type="food"'
+        ];
+        if ($pos) {
+            $params['where'][] = 'id < ' . $pos;
+        }
+        $list = $pointModel->gets($params);
+        $ids = array_column($list, 'id');
+        $result = [];
+        if ($ids) {
+            $result = $pointModel->getByIds(implode(',', $ids));
+        }
+        $this->returnSucceed($result);
+    }
+
     function getPointDetail()
     {
         $id = getRequest('id');
