@@ -203,6 +203,9 @@ class Api extends Swoole\Controller
         $result = [];
         if ($id) {
             $result = $pointModel->getById($id);
+            if ($result['son_views']) {
+                $result['son_views'] = $pointModel->getByIds($result['son_views']);
+            }
         }
         $this->returnSucceed($result);
     }

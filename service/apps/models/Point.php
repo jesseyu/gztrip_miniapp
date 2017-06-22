@@ -64,6 +64,7 @@ class Point extends Swoole\Model
     {
         $params = ['in' => ['id', $ids]];
         $list = $this->gets($params);
+        $result = [];
         foreach ($list as $one) {
             $xModel = model($one['type']);
             $xdata = $xModel->analyzeData($one['obj']);

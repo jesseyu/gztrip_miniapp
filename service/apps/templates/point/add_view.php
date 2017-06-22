@@ -57,7 +57,21 @@
                 </dd>
             </dl>
             <dl>
-                <dt>交通：</dt>
+                <dt>参考用时：</dt>
+                <dd>
+                    <input type='text' name='cost_time' maxlength='255'/>
+                    <span class='info'></span>
+                </dd>
+            </dl>
+            <dl>
+                <dt>地址：</dt>
+                <dd>
+                    <input type='text' name='address' maxlength='255'/>
+                    <span class='info'></span>
+                </dd>
+            </dl>
+            <dl>
+                <dt>到达方式：</dt>
                 <dd>
                     <div class='unit'>
                         <textarea class='editor' name='traffic' rows='10' cols='50' tools='simple'></textarea>

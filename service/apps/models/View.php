@@ -17,13 +17,15 @@ class View
             'son_views' => '子景点',
             'imgs' => '图片',
             'fee' => '费用',
-            'traffic' => '交通',
+            'traffic' => '到达方式',
             'video' => '视频',
             'des' => '介绍',
             'score' => '分数',
             'open_time' => '经营时间',
             'phone' => '电话',
             'tip' => '旅行贴士',
+            'address' => '地址',
+            'cost_time' => '参考用时',
         ];
     }
 

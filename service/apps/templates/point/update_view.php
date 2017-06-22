@@ -1,7 +1,8 @@
 <link href="/assets/themes/css/core.css" rel="stylesheet" type="text/css" media="screen"/>
 <h2 class='contentTitle'><?php echo $title; ?></h2>
 <div class='pageContent'>
-    <form method='post' action='<?= URL('point/updatepoint'); ?>' class='pageForm required-validate' enctype="multipart/form-data" onsubmit="return iframeCallback(this);">
+    <form method='post' action='<?= URL('point/updatepoint'); ?>' class='pageForm required-validate'
+          enctype="multipart/form-data" onsubmit="return iframeCallback(this);">
         <div class='pageFormContent nowrap' layoutH='97'>
             <dl>
                 <dt>名称：</dt>
@@ -57,7 +58,21 @@
                 </dd>
             </dl>
             <dl>
-                <dt>交通：</dt>
+                <dt>参考用时：</dt>
+                <dd>
+                    <input type='text' name='cost_time' maxlength='255' value='<?= $data['cost_time']; ?>'/>
+                    <span class='info'></span>
+                </dd>
+            </dl>
+            <dl>
+                <dt>地址：</dt>
+                <dd>
+                    <input type='text' name='address' maxlength='255' value='<?= $data['address']; ?>'/>
+                    <span class='info'></span>
+                </dd>
+            </dl>
+            <dl>
+                <dt>到达方式：</dt>
                 <dd>
                     <div class='unit'>
                         <textarea class='editor' name='traffic' rows='10' cols='50'
