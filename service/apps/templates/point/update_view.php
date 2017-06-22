@@ -51,7 +51,7 @@
                 </dd>
             </dl>
             <dl>
-                <dt>人均费用：</dt>
+                <dt>门票：</dt>
                 <dd>
                     <input type='text' name='fee' maxlength='255' value='<?= $data['fee']; ?>'/>
                     <span class='info'></span>
@@ -75,7 +75,7 @@
                 <dt>到达方式：</dt>
                 <dd>
                     <div class='unit'>
-                        <textarea class='editor' name='traffic' rows='10' cols='50'
+                        <textarea  name='traffic' rows='10' cols='50'
                                   tools='simple'><?= $data['traffic']; ?></textarea>
                     </div>
                     <span class='info'></span>
@@ -106,7 +106,7 @@
                 </dd>
             </dl>
             <dl>
-                <dt>经营时间：</dt>
+                <dt>开放时间：</dt>
                 <dd>
                     <input type='text' name='open_time' maxlength='11' class='required'
                            value='<?= $data['open_time']; ?>'/>
@@ -124,8 +124,7 @@
                 <dt>小贴士：</dt>
                 <dd>
                     <div class='unit'>
-                        <textarea class='editor' name='tip' rows='10' cols='50'
-                                  tools='simple'><?= $data['tip']; ?></textarea>
+                        <textarea  name='tip' rows='10' cols='50' tools='simple'><?= $data['tip']; ?></textarea>
                     </div>
                     <span class='info'></span>
                 </dd>

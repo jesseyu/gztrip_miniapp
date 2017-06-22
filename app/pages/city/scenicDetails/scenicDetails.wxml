@@ -1,5 +1,5 @@
-<import src="../../../spot-grid/spot-grid-template.wxml" />
-<import src="../../../plugin/wxParse/wxParse.wxml" />
+<import src="/pages/spot-grid/spot-grid-template.wxml" />
+<import src="/plugin/wxParse/wxParse.wxml" />
 <view class="scenicHead">
   <text class="scenicTitle">{{scenicDetail.name}}</text>
   <text class="scenicPhotoNum">{{scenicDetail.imgs.length}}张</text>
@@ -19,7 +19,7 @@
       <text class="scenicMore">视频了解</text>
     </view>
     <view class="scenicBoxCont">
-        <template is="wxParse" data="{{wxParseData:desContet.nodes}}" />
+      <template is="wxParse" data="{{wxParseData:desContet.nodes}}" />
     </view>
   </view>
   <view class="scenicBox">
@@ -29,20 +29,19 @@
     <view class="scenicBoxCont">
       <view class="scenicBoxItem">
         <text class="title">开放时间</text>
-        <text class="text">全天24小时</text>
+        <text class="text">{{scenicDetail.open_time}}</text>
       </view>
       <view class="scenicBoxItem">
         <text class="title">用时参考</text>
-        <text class="text">3-5小时</text>
+        <text class="text">{{scenicDetail.cost_time}}</text>
       </view>
       <view class="scenicBoxItem">
         <text class="title">到达方式</text>
-        <text class="text">1、自助：从贵阳乘火车至镇远，每天有约 2、自驾：可走三穗至黎平的高速公路，路
-        </text>
+        <text class="text">{{scenicDetail.traffic}}</text>
       </view>
       <view class="scenicBoxItem">
         <text class="title">地址</text>
-        <text class="text">{{scenicDetail.phone}}</text>
+        <text class="text">{{scenicDetail.address}}</text>
       </view>
       <view class="scenicBoxItem">
         <text class="title">门票</text>
@@ -54,20 +53,21 @@
       </view>
       <view class="scenicBoxItem">
         <text class="title">Tips贴士</text>
-        <text class="text">因为山上有猴子要注意猴子一举一动，你懂的</text>
+        <text class="text">{{scenicDetail.tip}}</text>
       </view>
     </view>
   </view>
-  <view class="scenicBox">
+  <view class="scenicBox" wx:if="{{scenicDetail.son_views.length != 0}}">
     <view class="scenicBoxHead">
       <text class="scenicBoxTitle">包含的内部景点</text>
-      <text class="scenicMore" catchtap="onScenicMoreTap">更多</text>
     </view>
     <view class="scenicBoxCont">
       <view class="mod_gridbox">
-        <template is="spotGridTemplate"></template>
-        <template is="spotGridTemplate"></template>
-        <template is="spotGridTemplate"></template>
+        <block wx:for="{{scenicDetail.son_views}}">
+          <view class="mod_gridItem" catchtap="onChildScenicTap" data-postid="{{item.id}}">
+            <template is="spotGridTemplate" data="{{...item}}"></template>
+          </view>
+        </block>
       </view>
     </view>
   </view>
