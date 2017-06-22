@@ -14,8 +14,6 @@ Page({
     util.http(allCityUrl,this.processGetAllCityData) //获取所有城市
   },
   processIndexData:function(data){
-      console.log(data);
-      console.log(data.data.season_view);
       this.setData({
         homeData: data.data
       })
@@ -53,5 +51,10 @@ Page({
         playStatus: false
       })
     }
+  },
+  onScenicTap:function(event){
+    wx.navigateTo({
+      url: '/pages/city/scenicDetails/scenicDetails?cityId=' + event.currentTarget.dataset.postid
+    })
   }
 })

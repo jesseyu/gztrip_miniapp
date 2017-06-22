@@ -52,7 +52,7 @@
     <view class="itemContainer">
       <view class="mod_gridbox">
         <block wx:for="{{homeData.recommend_view}}" wx:for-item="item">
-          <view class="mod_gridItem">
+          <view class="mod_gridItem" catchtap="onScenicTap" data-postid="{{item.id}}">
             <template is="spotGridTemplate" data="{{...item}}"></template>
           </view>
         </block>
