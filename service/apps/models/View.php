@@ -26,6 +26,7 @@ class View
             'tip' => '旅行贴士',
             'address' => '地址',
             'cost_time' => '参考用时',
+            'coordination' => '坐标',
         ];
     }
 

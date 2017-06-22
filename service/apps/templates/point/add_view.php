@@ -71,6 +71,13 @@
                 </dd>
             </dl>
             <dl>
+                <dt>坐标：</dt>
+                <dd>
+                    <input type='text' name='coordination' maxlength='255'/>
+                    <span class='info'></span>
+                </dd>
+            </dl>
+            <dl>
                 <dt>到达方式：</dt>
                 <dd>
                     <div class='unit'>
