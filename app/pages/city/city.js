@@ -22,7 +22,7 @@ Page({
   },
   onScenicTap: function (event) {
     wx.navigateTo({
-      url: '/pages/city/scenicDetails/scenicDetails?cityId=' + event.currentTarget.dataset.postid
+      url: '/pages/city/scenicDetails/scenicDetails?scenicId=' + event.currentTarget.dataset.postid
     })
   }
 })

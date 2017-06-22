@@ -3,21 +3,12 @@ var WxParse = require('../../../plugin/wxParse/wxParse.js');
 var app = getApp();
 
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
   
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
-    console.log(options.cityId);
-    var scenicDetailUrl = app.globalData.g_gzTripBase + "/getPointDetail?id=" + options.cityId;
-    util.http(scenicDetailUrl, this.processScenicDetail)
+    var scenicDetailUrl = app.globalData.g_gzTripBase + "/getPointDetail?id=" + options.scenicId;
+    util.http(scenicDetailUrl, this.processScenicDetail);
   },
   processScenicDetail:function(data){
       console.log(data);
@@ -27,11 +18,12 @@ Page({
       })
       var des = data.data.des;
       WxParse.wxParse('desContet', 'html', des, that, 5);
-
   },
-  onScenicMoreTap:function(e){
+  onChildScenicTap:function(event){
+    console.log(event);
+    var childScenicId = event.currentTarget.dataset.postid;
     wx.navigateTo({
-      url: '../moreScenic/moreScenic',
+      url: '/pages/city/scenicDetails/scenicDetails?scenicId=' + childScenicId
     })
   }
 })
