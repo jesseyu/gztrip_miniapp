@@ -39,6 +39,8 @@ class View
         foreach ($att as $key => $value) {
             if (getRequest($key)) {
                 $data[$key] = getRequest($key);
+            } else {
+                $data[$key] = null;
             }
         }
         //上传图片
