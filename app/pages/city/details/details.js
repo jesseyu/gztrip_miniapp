@@ -71,9 +71,10 @@ Page({
     WxParse.wxParse('playArticle', 'html', playArticle, that, 5); 
   },
   onScenicTap: function (e) {
-    var cityid = e.currentTarget.dataset.cityid;
+    var scenicId = e.currentTarget.dataset.scenicid;
+    console.log(scenicId);
     wx.navigateTo({
-      url: '../scenicDetails/scenicDetails?cityId=' + cityid
+      url: '../scenicDetails/scenicDetails?scenicId=' + scenicId
     })
   },
   onfoodTap: function (e) {

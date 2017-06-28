@@ -7,6 +7,7 @@ Page({
   
   },
   onLoad: function (options) {
+    console.log(options);
     var scenicDetailUrl = app.globalData.g_gzTripBase + "/getPointDetail?id=" + options.scenicId;
     util.http(scenicDetailUrl, this.processScenicDetail);
   },

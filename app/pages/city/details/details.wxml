@@ -10,7 +10,7 @@
   <view class="cdtabItem spots" wx:if="{{currentTab == 0}}">
     <view class="cdContent">
       <block wx:for="{{viewList}}">
-        <view class="cd_list" catchtap="onScenicTap" data-cityId="{{item.id}}">
+        <view class="cd_list" catchtap="onScenicTap" data-scenicId="{{item.id}}">
           <view class="cdInfo">
             <text class="cdName">{{item.name}}</text>
             <text class="cdPeople">最佳游玩季节：</text>
