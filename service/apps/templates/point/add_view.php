@@ -78,7 +78,7 @@
                 </dd>
             </dl>
             <dl>
-                <dt>到达方式：</dt>
+                <dt>到达方式：</dt >
                 <dd>
                     <div class='unit'>
                         <textarea name='traffic' rows='10' cols='50' tools='simple'></textarea>
