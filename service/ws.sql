@@ -9,7 +9,7 @@
  Target Server Version : 50627
  File Encoding         : utf-8
 
- Date: 06/19/2017 18:55:33 PM
+ Date: 06/29/2017 00:04:31 AM
 */
 
 SET NAMES utf8;
@@ -71,13 +71,13 @@ CREATE TABLE `city` (
   `code` varchar(10) DEFAULT NULL COMMENT '邮编',
   `ctime` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Records of `city`
 -- ----------------------------
 BEGIN;
-INSERT INTO `city` VALUES ('1', '贵阳', '[\"3dbe27b4d60b8c59a964f97301929ffe1.jpg\"]', '1', '1', '7', '4,5', '', '', '0851', '1496978324'), ('2', '遵义市', '[\"d70daa2e11cdb7dca82f9e9784ee40c21.jpg\"]', '遵义', '1', '', '', '', '', '0851', '1496209761');
+INSERT INTO `city` VALUES ('1', '贵阳', '[\"3dbe27b4d60b8c59a964f97301929ffe1.jpg\"]', '1', '1', '7', '4,5', '指南', '怎么玩', '0851', '1497969653'), ('2', '遵义市', '[\"d70daa2e11cdb7dca82f9e9784ee40c21.jpg\"]', '遵义', '1', '', '', '', '', '0851', '1496209761'), ('3', '上海', '[\"303db95c323dac9a92871ef230ae2d691.jpg\"]', '1', '1', '7', '7', '1', '1', '11', '1497871207');
 COMMIT;
 
 -- ----------------------------
@@ -164,15 +164,16 @@ CREATE TABLE `point` (
   `name` varchar(255) NOT NULL COMMENT '名称',
   `status` int(11) NOT NULL DEFAULT '1' COMMENT '状态 0下线 1 正常',
   `obj` text NOT NULL COMMENT '字段内容',
+  `is_son` int(11) NOT NULL DEFAULT '0' COMMENT '是否是子景点',
   `ctime` int(11) NOT NULL COMMENT '创建时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Records of `point`
 -- ----------------------------
 BEGIN;
-INSERT INTO `point` VALUES ('4', '1', 'view', '大山1', '1', '{\"son_views\":\"1,2\",\"fee\":\"100\",\"traffic\":\"21\",\"video\":\"1\",\"des\":\"1\",\"score\":\"1\",\"open_time\":\"1\",\"phone\":\"1\",\"tip\":\"1\",\"imgs\":[\"http:\\/\\/ws.com\\/local\\/cbe5b038e740fc9586b4eca02dfdea431.jpg\"]}', '1495870849'), ('5', '0', 'view', '大河', '1', '{\"fee\":\"100\",\"traffic\":\"1\",\"video\":\"2\",\"des\":\"1\",\"score\":\"11\",\"open_time\":\"11\",\"phone\":\"1\",\"tip\":\"111\",\"imgs\":[\"56624b54f860be2177c2195301ef094c1.png\"]}', '1496199625'), ('6', '0', 'view', '长江', '1', '{\"fee\":\"1\",\"traffic\":\"1\",\"video\":\"1\",\"des\":\"1\",\"score\":\"1\",\"open_time\":\"1\",\"phone\":\"1\",\"tip\":\"1\",\"imgs\":[\"http:\\/\\/ws.com\\/local\\/fa2aa5d34e742169c5cb206a43f8ad931.jpg\",\"http:\\/\\/ws.com\\/local\\/827884da538aed106de035c79da340e31.png\"]}', '1496200212'), ('7', '2', 'food', '锅包肉', '1', '{\"fee\":\"1\",\"traffic\":\"1\",\"video\":\"1\",\"des\":\"1\",\"score\":\"1\",\"open_time\":\"1\",\"phone\":\"1\",\"tip\":\"1\",\"imgs\":[\"2c5750bf2c0b73964053422916ace8521.jpg\",\"4022ad733c3d752a94fcc678e4743dad1.png\"]}', '1496200653'), ('9', '1', 'specialty', '土豆片', '1', '{\"taste\":\"2\",\"where\":\"1\",\"imgs\":[\"bc55568f9ecb4802a63894ab201d2c3e1.png\"]}', '1496838907');
+INSERT INTO `point` VALUES ('4', '1', 'view', '大山1', '1', '{\"son_views\":\"5\",\"fee\":\"100\",\"traffic\":\"21\",\"video\":\"1\",\"des\":\"1\",\"score\":\"1\",\"open_time\":\"1\",\"phone\":\"1\",\"tip\":\"1\",\"address\":\"1\",\"cost_time\":\"1\",\"coordination\":\"&lt;br \\/&gt;&lt;b&gt;Notice&lt;\\/b&gt;:  Undefined index: coordination in &lt;b&gt;\\/Users\\/xiangdong\\/work\\/gztrip_miniapp\\/service\\/apps\\/templates\\/point\\/update_view.php&lt;\\/b&gt; on line &lt;b&gt;101&lt;\\/b&gt;&lt;br \\/&gt;\",\"best_season\":\"\\u6625\\u5929\",\"is_son\":\"1\",\"imgs\":[\"c0af1df90bf7d18b824f2dec8adfd38a1.png\"]}', '1', '1495870849'), ('5', '1', 'view', '大河', '1', '{\"son_views\":\"&lt;br \\/&gt;&lt;b&gt;Notice&lt;\\/b&gt;:  Undefined index: son_views in &lt;b&gt;\\/Users\\/xiangdong\\/work\\/gztrip_miniapp\\/service\\/apps\\/templates\\/point\\/update_view.php&lt;\\/b&gt; on line &lt;b&gt;48&lt;\\/b&gt;&lt;br \\/&gt;\",\"fee\":\"100\",\"traffic\":\"1\",\"video\":\"2\",\"des\":\"1\",\"score\":\"11\",\"open_time\":\"11\",\"phone\":\"1\",\"tip\":\"111\",\"imgs\":[\"56624b54f860be2177c2195301ef094c1.png\"]}', '0', '1496199625'), ('6', '0', 'view', '长江', '1', '{\"fee\":\"1\",\"traffic\":\"1\",\"video\":\"1\",\"des\":\"1\",\"score\":\"1\",\"open_time\":\"1\",\"phone\":\"1\",\"tip\":\"1\",\"imgs\":[\"http:\\/\\/ws.com\\/local\\/fa2aa5d34e742169c5cb206a43f8ad931.jpg\",\"http:\\/\\/ws.com\\/local\\/827884da538aed106de035c79da340e31.png\"]}', '0', '1496200212'), ('7', '2', 'food', '锅包肉', '1', '{\"fee\":\"1\",\"traffic\":\"1\",\"video\":\"1\",\"des\":\"1\",\"score\":\"1\",\"open_time\":\"1\",\"phone\":\"1\",\"tip\":\"1\",\"imgs\":[\"2c5750bf2c0b73964053422916ace8521.jpg\",\"4022ad733c3d752a94fcc678e4743dad1.png\"]}', '0', '1496200653'), ('9', '1', 'specialty', '土豆片', '1', '{\"taste\":\"2\",\"where\":\"1\",\"imgs\":[\"bc55568f9ecb4802a63894ab201d2c3e1.png\"]}', '0', '1496838907'), ('10', '3', 'view', '北京天安门', '1', '{\"son_views\":\"5\",\"fee\":\"100\",\"traffic\":\"111\",\"video\":\"1\",\"des\":\"1\",\"score\":\"1\",\"open_time\":\"1\",\"phone\":\"1\",\"tip\":\"1\",\"address\":\"1\",\"cost_time\":\"1\",\"coordination\":\"1\\uff0c1\",\"best_season\":\"\\u6625\\u5929\",\"is_son\":\"1\",\"imgs\":[\"ef24d223895f4bc32219a73afe59acec1.png\"]}', '0', '1498665347');
 COMMIT;
 
 -- ----------------------------

@@ -24,7 +24,8 @@ class Point extends Swoole\Model
             'name' => '名称',
             'obj' => '字段内容',
             'city_id' => '城市id',
-            'ctime' => '创建时间'
+            'ctime' => '创建时间',
+            'is_son' => '是否是子景点',
         ];
     }
 

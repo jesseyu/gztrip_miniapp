@@ -160,7 +160,8 @@ class Api extends Swoole\Controller
         $params['limit'] = 10;
         $params['where'] = [
             'city_id=' . $city_id,
-            'type="view"'
+            'type="view"',
+            'is_son=0'
         ];
         if ($pos) {
             $params['where'][] = 'id < ' . $pos;
@@ -205,6 +206,8 @@ class Api extends Swoole\Controller
             $result = $pointModel->getById($id);
             if ($result['son_views']) {
                 $result['son_views'] = $pointModel->getByIds($result['son_views']);
+            } else {
+                $result['son_views'] = [];
             }
         }
         $this->returnSucceed($result);

@@ -1,7 +1,8 @@
 <link href="/assets/themes/css/core.css" rel="stylesheet" type="text/css" media="screen"/>
 <h2 class='contentTitle'><?php echo $title; ?></h2>
 <div class='pageContent'>
-    <form method='post' action='<?= URL('point/addpoint'); ?>' class='pageForm required-validate' enctype="multipart/form-data" onsubmit="return iframeCallback(this);">
+    <form method='post' action='<?= URL('point/addpoint'); ?>' class='pageForm required-validate'
+          enctype="multipart/form-data" onsubmit="return iframeCallback(this);">
         <div class='pageFormContent nowrap' layoutH='97'>
             <dl>
                 <dt>名称：</dt>
@@ -30,7 +31,7 @@
             <dl>
                 <div class="unit">
                     <ul id="upload-preview" class="upload-preview">
-                        <?php if ($data['imgs']) { ?>
+                        <?php if (isset($data['imgs']) && $data['imgs']) { ?>
                             <?php foreach ($data['imgs'] as $img) { ?>
                                 <li class="thumbnail"><img src="<?= $img ?>" data-width="0" data-height="0" width="80">
                                 </li>
@@ -43,6 +44,22 @@
                 </div>
             </dl>
             <dl>
+                <dt>是否是子景点：</dt>
+                <dd>
+                    <label><input type="radio" name="is_son" value="1"/>是</label>
+                    <label><input type="radio" name="is_son" value="0" checked/>否</label>
+                    <span class='info'></span>
+                </dd>
+            </dl>
+
+            <dl>
+                <dt>子景点：</dt>
+                <dd>
+                    <input type='text' name='son_views' maxlength='255'/>
+                    <span class='info'></span>
+                </dd>
+            </dl>
+            <dl>
                 <dt>子景点：</dt>
                 <dd>
                     <input type='text' name='son_views' maxlength='255'/>
@@ -53,6 +70,13 @@
                 <dt>门票：</dt>
                 <dd>
                     <input type='text' name='fee' maxlength='255'/>
+                    <span class='info'></span>
+                </dd>
+            </dl>
+            <dl>
+                <dt>最佳游玩季节：</dt>
+                <dd>
+                    <input type='text' name='best_season' maxlength='255'/>
                     <span class='info'></span>
                 </dd>
             </dl>
@@ -127,7 +151,7 @@
                 <dt>小贴士：</dt>
                 <dd>
                     <div class='unit'>
-                        <textarea  name='tip' rows='10' cols='50' tools='simple'></textarea>
+                        <textarea name='tip' rows='10' cols='50' tools='simple'></textarea>
                     </div>
                     <span class='info'></span>
                 </dd>

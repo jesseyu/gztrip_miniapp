@@ -44,17 +44,41 @@
                 </div>
             </dl>
             <dl>
+                <dt>是否是子景点：</dt>
+                <dd>
+                    <?php
+                    $check2 = $check1 = "";
+                    if ($data['is_son'] == 1) {
+                        $check1 = 'checked';
+                    } else {
+                        $check2 = 'checked';
+                    } ?>
+                    <label><input type="radio" name="is_son" <?= $check1 ?> value="1"/>是</label>
+                    <label><input type="radio" name="is_son" <?= $check2 ?> value="0"/>否</label>
+                    <span class='info'></span>
+                </dd>
+            </dl>
+
+            <dl>
                 <dt>子景点：</dt>
                 <dd>
                     <input type='text' name='son_views' maxlength='255' value='<?= $data['son_views']; ?>'/>
                     <span class='info'></span>
                 </dd>
             </dl>
+
             <dl>
                 <dt>门票：</dt>
                 <dd>
                     <input type='text' name='fee' maxlength='255' value='<?= $data['fee']; ?>'/>
                     <span class='info'></span>
+                </dd>
+            </dl>
+            <dl>
+                <dt>最佳游玩季节：</dt>
+                <dd>
+                    <input type='text' name='best_season' maxlength='255' value='<?= $data['best_season']; ?>' />
+                    <span class=' info'></span>
                 </dd>
             </dl>
             <dl>
@@ -82,7 +106,7 @@
                 <dt>到达方式：</dt>
                 <dd>
                     <div class='unit'>
-                        <textarea  name='traffic' rows='10' cols='50'
+                        <textarea name='traffic' rows='10' cols='50'
                                   tools='simple'><?= $data['traffic']; ?></textarea>
                     </div>
                     <span class='info'></span>
@@ -131,7 +155,7 @@
                 <dt>小贴士：</dt>
                 <dd>
                     <div class='unit'>
-                        <textarea  name='tip' rows='10' cols='50' tools='simple'><?= $data['tip']; ?></textarea>
+                        <textarea name='tip' rows='10' cols='50' tools='simple'><?= $data['tip']; ?></textarea>
                     </div>
                     <span class='info'></span>
                 </dd>

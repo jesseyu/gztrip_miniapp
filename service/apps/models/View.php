@@ -27,6 +27,8 @@ class View
             'address' => '地址',
             'cost_time' => '参考用时',
             'coordination' => '坐标',
+            'best_season' => '最佳游玩季节',
+            'is_son' => '是否是子景点',
         ];
     }
 
